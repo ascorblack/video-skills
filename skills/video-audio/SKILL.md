@@ -10,17 +10,17 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 
 ## Short rules
 
-1. Start the first version of the background calm and light, add on request; do not substitute the accepted style during revisions. [Звук]
-2. Place sound events on the moment that is visible, and take the time from the animation itself, not from the storyboard. [Звук]
-3. Music under the voice: 16–20 dB quieter than the speech [Звук], 18–20 dB [3D], about 19 dB [Научпоп]. Measure the loudness of speech only on the sections with phrases. [Звук] [Научпоп]
-4. Normalize by loudness (LUFS), not by peak. [Звук] Bring the finished mix to −16 LUFS with a single static gain with a limiter, not by normalizing per track. [3D] [Научпоп]
-5. Measure the true peak on the already encoded file: lossy encoding raises peaks. [Звук]
-6. Give the text for synthesis in an explicit frame "read verbatim, do not answer"; check verbatim reading twice. [Звук]
-7. Background between events: silence, not a bed [Звук] — but the ether interference of the archive voice runs continuously for the whole video [Научпоп]. See "Where the sources disagree" in `sound-design.md`.
-8. Do not stretch or squeeze a phrase to fit the picture — move the picture [Видео]; if the model speaks slowly, speed up the whole finished track by stretching without changing pitch [Звук]. See `voiceover.md`.
-9. Place a phrase by the start of speech in the take, not by the start of the file. [Научпоп]
-10. Do not print the API key or write it anywhere; count the spending by the accounting. [Звук]
-11. Do not delete or replace earlier versions: every new version is a new file. [Звук]
+1. Start the first version of the background calm and light, add on request; do not substitute the accepted style during revisions. [Audio]
+2. Place sound events on the moment that is visible, and take the time from the animation itself, not from the storyboard. [Audio]
+3. Music under the voice: 16–20 dB quieter than the speech [Audio], 18–20 dB [3D], about 19 dB [Popsci]. Measure the loudness of speech only on the sections with phrases. [Audio] [Popsci]
+4. Normalize by loudness (LUFS), not by peak. [Audio] Bring the finished mix to −16 LUFS with a single static gain with a limiter, not by normalizing per track. [3D] [Popsci]
+5. Measure the true peak on the already encoded file: lossy encoding raises peaks. [Audio]
+6. Give the text for synthesis in an explicit frame "read verbatim, do not answer"; check verbatim reading twice. [Audio]
+7. Background between events: silence, not a bed [Audio] — but the ether interference of the archive voice runs continuously for the whole video [Popsci]. See "Where the sources disagree" in `sound-design.md`.
+8. Do not stretch or squeeze a phrase to fit the picture — move the picture [Video]; if the model speaks slowly, speed up the whole finished track by stretching without changing pitch [Audio]. See `voiceover.md`.
+9. Place a phrase by the start of speech in the take, not by the start of the file. [Popsci]
+10. Do not print the API key or write it anywhere; count the spending by the accounting. [Audio]
+11. Do not delete or replace earlier versions: every new version is a new file. [Audio]
 
 ## Details
 
@@ -32,8 +32,8 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 
 ## Sources
 
-- [Звук] — archive lessons on sound and voiceover of promo videos and presentations.
-- [Видео] — archive lessons on video: interface recordings, pace, transitions.
-- [Визуал] — archive lessons on the visuals of promo videos made of schematic frames.
+- [Audio] — archive lessons on sound and voiceover of promo videos and presentations.
+- [Video] — archive lessons on video: interface recordings, pace, transitions.
+- [Visual] — archive lessons on the visuals of promo videos made of schematic frames.
 - [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
-- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.
+- [Popsci] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.

@@ -1,6 +1,6 @@
 # Frame-by-frame rendering with seeking
 
-## Pitfalls [Визуал]
+## Pitfalls [Visual]
 
 The render takes a frame by time, and does not play the animation through. Therefore:
 
@@ -15,13 +15,13 @@ The render takes a frame by time, and does not play the animation through. There
 
 ## Frame capture and resources
 
-- [Научпоп] Keep the canvases that go as a texture into the 3D frame in CPU memory: a texture from a canvas in video card memory came in torn or black in some frames during frame capture.
-- [Научпоп] Embed fonts with Cyrillic into the project as files: they may be absent on the render machine, and the titles will quietly be substituted with someone else's font.
+- [Popsci] Keep the canvases that go as a texture into the 3D frame in CPU memory: a texture from a canvas in video card memory came in torn or black in some frames during frame capture.
+- [Popsci] Embed fonts with Cyrillic into the project as files: they may be absent on the render machine, and the titles will quietly be substituted with someone else's font.
 - [3D] For Cyrillic connect separate font files with `unicode-range` and pass a Cyrillic sample to `document.fonts.load`: the Latin subset silently goes to the system font.
 
 ## Determinism and repeatability
 
 - [3D] Since the render runs in several processes and frames are computed in any order, smooth the poses baked: go through all frames without rendering, smooth and give the page the ready corrections in JSON (in detail — the `video-3d-animation` skill, `motion.md`).
-- [Научпоп] Compute the grain noise from the frame number, not from a random generator: then a repeated render and a render on another machine give the same frame.
-- [Звук] If the generation depends on random numbers, preserve their sequence; after any edits of the generator, check that earlier versions reassemble byte for byte the same.
-- [Видео] With frame-by-frame browser capture by virtual time a repeated take matches the previous one frame for frame (the `video-ui-capture` skill).
+- [Popsci] Compute the grain noise from the frame number, not from a random generator: then a repeated render and a render on another machine give the same frame.
+- [Audio] If the generation depends on random numbers, preserve their sequence; after any edits of the generator, check that earlier versions reassemble byte for byte the same.
+- [Video] With frame-by-frame browser capture by virtual time a repeated take matches the previous one frame for frame (the `video-ui-capture` skill).

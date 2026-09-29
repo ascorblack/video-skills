@@ -1,6 +1,6 @@
 # Explanations in the frame: term + applied example
 
-## Term and example [Визуал]
+## Term and example [Visual]
 
 Keep the terms: for a viewer who knows them it is quicker. But every term needs an applied example — a concrete case after which it is clear what is happening on the screen.
 
@@ -11,12 +11,12 @@ Keep the terms: for a viewer who knows them it is quicker. But every term needs 
 - **Replace infrastructure jargon with what the viewer sees:** "pod" → "server", "cell" → "square". Identifiers and commands leave as they are, that is the proof.
 - **One idea per slide.** If an example needs two sentences about different things, that is two slides.
 
-## Numbers [Визуал]
+## Numbers [Visual]
 
 - Numbers — only those verified by the team, and worded as what was actually verified: "N tests built" if the tests were not run but only built.
 - Do not carry outdated figures from the README into the frame without checking them against the code.
 
 ## One source of text
 
-- [Видео] On-screen text and the narrator's text — from one source. The title and the phrase under it are what is read aloud. Generate the narrator's file from the same list from which the slides are assembled, then they will not diverge.
-- [Визуал] Translation — from one source. All strings are kept in pairs "original → translation", and both the page with a language switcher and the video in the other language are assembled from them. Code, commands, identifiers are not translated. Checking of meaning — by a table per chapter.
+- [Video] On-screen text and the narrator's text — from one source. The title and the phrase under it are what is read aloud. Generate the narrator's file from the same list from which the slides are assembled, then they will not diverge.
+- [Visual] Translation — from one source. All strings are kept in pairs "original → translation", and both the page with a language switcher and the video in the other language are assembled from them. Code, commands, identifiers are not translated. Checking of meaning — by a table per chapter.

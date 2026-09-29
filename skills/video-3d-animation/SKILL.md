@@ -13,9 +13,9 @@ Every rule is taken from the lessons of past videos; the source is in square bra
 2. Make any change of pose by weight with blending over 0.25–0.6 s, not with an `if (t > a)` switch. [3D]
 3. Blend angles only by the short path (`lerpAng`). [3D]
 4. Start the next animation block from the position where the previous one ended, not from a point of the path. [3D]
-5. Hold an object in the hand through contact: move the character so that the hand lands on the point [3D]; attach the object to the hand, not to the body [Научпоп].
-6. Lower the feet 0–6 mm below the surface, not above [Научпоп]; raise the hand on a surface exactly to the fingertip [3D].
-7. Take the step of the legs from the distance traveled, not from time. [Научпоп]
+5. Hold an object in the hand through contact: move the character so that the hand lands on the point [3D]; attach the object to the hand, not to the body [Popsci].
+6. Lower the feet 0–6 mm below the surface, not above [Popsci]; raise the hand on a surface exactly to the fingertip [3D].
+7. Take the step of the legs from the distance traveled, not from time. [Popsci]
 8. In a multi-process render smooth the poses baked, in advance, and give the page the ready corrections. [3D]
 9. Contact shadows give the most "groundedness" for the minimum price. [3D]
 10. Run the detectors of intersections and jerks before the full render, but still look at full-size frames at the moments of actions with your eyes. [3D]
@@ -32,4 +32,4 @@ Rendering and speeding it up — the `video-render` skill; synchronizing the han
 ## Sources
 
 - [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
-- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips (animation of flat figures and objects).
+- [Popsci] — lessons of a video in the style of Soviet popular science and early-70s filmstrips (animation of flat figures and objects).

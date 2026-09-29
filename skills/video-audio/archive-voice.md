@@ -1,4 +1,4 @@
-# The "archive" voice and ether interference [Научпоп]
+# The "archive" voice and ether interference [Popsci]
 
 Everything in this file is from a video in the style of Soviet popular-science film of the early 70s, where the voice sounds "from the archive".
 
@@ -17,7 +17,7 @@ Everything in this file is from a video in the style of Soviet popular-science f
 - Check continuity by measurement: the interference in pauses and under phrases must match to within 1 dB (the working result — −49.6 and −49.6 dBFS). A check by ear is easily fooled by the music.
 - Under the voice duck only the music and do not touch the interference, otherwise the noise sags exactly under the phrases, and the join is audible again.
 
-This disagrees with the general advice [Звук] "between events — silence, not a bed"; that advice is about the background layers of the music and sound design of a promo, this one is about the ether layer of the archive voice.
+This disagrees with the general advice [Audio] "between events — silence, not a bed"; that advice is about the background layers of the music and sound design of a promo, this one is about the ether layer of the archive voice.
 
 ## Loudness and the finale
 

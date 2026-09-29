@@ -16,4 +16,4 @@
 
 - [3D] Lay a very faint diagonal glare over a switched-off screen (4–5 % with additive blending), otherwise instead of glass the viewer sees a black rectangle in the air.
 - [3D] For Cyrillic connect separate font files with `unicode-range` and pass a Cyrillic sample to `document.fonts.load`: the Latin subset silently goes to the system font, and the canvas draws someone else's.
-- [Научпоп] Keep the canvases that go as a texture into the 3D frame in CPU memory: a texture from a canvas in video card memory came in torn or black in some frames during frame capture.
+- [Popsci] Keep the canvases that go as a texture into the 3D frame in CPU memory: a texture from a canvas in video card memory came in torn or black in some frames during frame capture.

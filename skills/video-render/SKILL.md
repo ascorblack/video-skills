@@ -10,16 +10,16 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 
 ## Short rules
 
-1. The render takes a frame by time, and does not play the animation through: one property — one animation, pulsations — by tweens, not `@keyframes`. [Визуал]
-2. Put external scripts and fonts into the project, and do not pull them during the render. [Визуал] [Научпоп]
-3. Compute the grain noise from the frame number, not from a random generator [Научпоп]; preserve the generator's sequence of random numbers and check that earlier versions reassemble byte for byte the same [Звук].
+1. The render takes a frame by time, and does not play the animation through: one property — one animation, pulsations — by tweens, not `@keyframes`. [Visual]
+2. Put external scripts and fonts into the project, and do not pull them during the render. [Visual] [Popsci]
+3. Compute the grain noise from the frame number, not from a random generator [Popsci]; preserve the generator's sequence of random numbers and check that earlier versions reassemble byte for byte the same [Audio].
 4. Before speeding up, check where the time goes. [3D]
 5. Encoding — on NVENC together with a bitrate limit; compare the codec's quality by PSNR on one piece. [3D]
 6. Launch the render detached from the session; two versions — sequentially, not simultaneously onto one video card. [3D]
 7. After moving to the render machine, compare the checksums of the files. [3D]
-8. Keep the picture and the sound separate: mux the sound in by copying the video stream, without re-encoding the picture. [Видео] [Визуал] [3D]
-9. Before delivery — ffprobe and a check that the page serves exactly the new file. [Видео]
-10. Do not delete earlier versions. [Видео] [Звук]
+8. Keep the picture and the sound separate: mux the sound in by copying the video stream, without re-encoding the picture. [Video] [Visual] [3D]
+9. Before delivery — ffprobe and a check that the page serves exactly the new file. [Video]
+10. Do not delete earlier versions. [Video] [Audio]
 
 ## Details
 
@@ -29,8 +29,8 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 
 ## Sources
 
-- [Звук] — archive lessons on sound and voiceover of promo videos and presentations.
-- [Видео] — archive lessons on video: interface recordings, pace, transitions.
-- [Визуал] — archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render with seeking).
+- [Audio] — archive lessons on sound and voiceover of promo videos and presentations.
+- [Video] — archive lessons on video: interface recordings, pace, transitions.
+- [Visual] — archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render with seeking).
 - [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
-- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.
+- [Popsci] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.

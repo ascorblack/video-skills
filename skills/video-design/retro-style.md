@@ -1,4 +1,4 @@
-# Stylization in the manner of Soviet popular science and filmstrips [Научпоп]
+# Stylization in the manner of Soviet popular science and filmstrips [Popsci]
 
 Everything in this file is from a video in the style of popular-science and educational film of the early 70s: flat appliqué, a built set, program screens in the frame, a voice "from the archive". Each item was checked on the finished video or was redone because the viewer noticed it.
 

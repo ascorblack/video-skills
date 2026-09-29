@@ -20,18 +20,18 @@ Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the
 
 | Label | Where from |
 |---|---|
-| [Звук] | archive lessons on sound and voiceover of promo videos and presentations |
-| [Видео] | archive lessons on video: interface recordings, pace, transitions |
-| [Визуал] | archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render) |
+| [Audio] | archive lessons on sound and voiceover of promo videos and presentations |
+| [Video] | archive lessons on video: interface recordings, pace, transitions |
+| [Visual] | archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render) |
 | [3D] | lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render) |
-| [Научпоп] | lessons of a video in the style of Soviet popular-science film and early-70s filmstrips |
+| [Popsci] | lessons of a video in the style of Soviet popular-science film and early-70s filmstrips |
 
 ## Where the sources disagree
 
-- Continuous background: "between events — silence, not a bed" [Звук] versus a continuous layer of ether interference under the archive voice [Научпоп] — `video-audio/sound-design.md`, `archive-voice.md`.
-- Fitting the voice: cut the voice at silence and place the phrases into slides [Видео] versus "re-seat the picture onto the ready grid of the voice with interference, do not cut the sound" [Научпоп]; do not stretch a phrase to fit the picture [Видео] versus speeding up the whole track via atempo [Звук] — `video-audio/voiceover.md`.
-- Holding a slide after the phrase: 1–1.5 s [Видео] versus 2 s [Научпоп]; reading speed 2.4 [Видео] versus 2.7 words per second [Визуал] — `video-design/pacing-and-transitions.md`.
-- Interface in the frame: only a real recording [Видео] versus an interface redrawn in every frame of a stylized video [Научпоп]; cursor from the recording's events [3D] versus cursor from key points [Научпоп] — `video-ui-capture/framing.md`.
+- Continuous background: "between events — silence, not a bed" [Audio] versus a continuous layer of ether interference under the archive voice [Popsci] — `video-audio/sound-design.md`, `archive-voice.md`.
+- Fitting the voice: cut the voice at silence and place the phrases into slides [Video] versus "re-seat the picture onto the ready grid of the voice with interference, do not cut the sound" [Popsci]; do not stretch a phrase to fit the picture [Video] versus speeding up the whole track via atempo [Audio] — `video-audio/voiceover.md`.
+- Holding a slide after the phrase: 1–1.5 s [Video] versus 2 s [Popsci]; reading speed 2.4 [Video] versus 2.7 words per second [Visual] — `video-design/pacing-and-transitions.md`.
+- Interface in the frame: only a real recording [Video] versus an interface redrawn in every frame of a stylized video [Popsci]; cursor from the recording's events [3D] versus cursor from key points [Popsci] — `video-ui-capture/framing.md`.
 
 ## How to install
 

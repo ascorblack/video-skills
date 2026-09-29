@@ -1,6 +1,6 @@
 # Diagrams, lines, frame layout
 
-## Lines on diagrams [Визуал]
+## Lines on diagrams [Visual]
 
 There is one rule: in the final state of a frame, a line does not pass through a block, text or another line. Appearing in parts does not justify an intersection: a static frame is what the viewer looks at longest.
 
@@ -14,16 +14,16 @@ There is one rule: in the final state of a frame, a line does not pass through a
 - **Decorative "lines" are lines too.** Strikethrough of text, a track under a dot, a comb along the edge of a block that runs onto a neighboring tag — all of this is an intersection. Replace the strikethrough with a ✕ sign next to the word, cut off the track at the edge of the dot.
 - **A moving object goes on a layer above the blocks**, otherwise halfway it dives under a card and "disappears".
 
-[Видео] Connector lines are straight and go around blocks. A line crossing a card reads as an error.
+[Video] Connector lines are straight and go around blocks. A line crossing a card reads as an error.
 
-## How to check lines [Визуал]
+## How to check lines [Visual]
 
 - Take the final state of each frame before the next transition begins. A frame that falls into the dissolve window is a mix of two slides, and the reviewer will find non-existent intersections in it.
 - Give the frames to an independent reviewer model with a strict wording: what counts as a line, a block and text; ask for each intersection the place in percent of the frame and a way to route the line differently. No more than a dozen frames at a time.
 - After any text edit — a repeat pass. The length of a line changed, especially in translation — the tags shifted, and a clean frame gets cut again. Check disputed frames in each language separately.
 - Keep the reviewer's analysis as a file next to the work: what was found, what was fixed, the result of each pass.
 
-## Titles, figures, captions [Видео]
+## Titles, figures, captions [Video]
 
 - **Set titles as lines that fit in the column.** Auto-wrap gives dangling words. A line that does not fit is better caught by a check at assembly.
 - **Measure figures and large words by the longest line.** One long value runs into its neighbor if the width is set "by eye".

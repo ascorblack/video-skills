@@ -1,4 +1,4 @@
-# Delivering the sound, keys and spending [Звук]
+# Delivering the sound, keys and spending [Audio]
 
 ## How to deliver the sound
 
