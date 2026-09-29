@@ -1,24 +1,24 @@
-# Скорость рендера и кодирование [3D]
+# Render speed and encoding [3D]
 
-Цифры в этом файле — замеры одного 3D-ролика в headless Chrome.
+The figures in this file are measurements of one 3D video in headless Chrome.
 
-## Сначала замер
+## Measure first
 
-- Прежде чем ускорять, проверьте, куда уходит время: WebGL в headless Chrome уже шёл на видеокарте («hardware gpu» в журнале), а время съедали снятие кадров (12 мин) и программное кодирование (4 мин).
+- Before speeding up, check where the time goes: WebGL in headless Chrome already ran on the video card ("hardware gpu" in the log), and the time was eaten by frame capture (12 min) and software encoding (4 min).
 
-## Кодирование
+## Encoding
 
-- Кодирование переводите на NVENC (`--gpu`) вместе с `--video-bitrate 32M`: оно ускорилось в 2,6 раза (4:03 → 1:32). Без ограничения битрейта поток тяжелее в 2,6 раза (78 Мбит/с), а с ним PSNR 50,9 дБ против 50,0 дБ у x264 при том же размере файла.
-- Качество кодека сравнивайте на одном и том же 2-секундном куске, снятом обоими способами, по PSNR к варианту с высоким битрейтом: на глаз это не доказать, а проба стоит 20 секунд.
+- Switch encoding to NVENC (`--gpu`) together with `--video-bitrate 32M`: it sped up 2.6 times (4:03 → 1:32). Without a bitrate limit the stream is 2.6 times heavier (78 Mbit/s), and with it PSNR is 50.9 dB against 50.0 dB for x264 at the same file size.
+- Compare the codec's quality on one and the same 2-second piece, shot both ways, by PSNR against the high-bitrate variant: by eye this cannot be proved, and the trial costs 20 seconds.
 
-## Воркеры
+## Workers
 
-- На шесть воркеров вместо четырёх не рассчитывайте: снятие кадров ускорилось всего с 12:03 до 11:40, потому что упор в копирование кадров и CPU, а не в число процессов.
+- Do not count on six workers instead of four: frame capture sped up only from 12:03 to 11:40, because the bottleneck is frame copying and CPU, not the number of processes.
 
-## Запуск рендера
+## Launching the render
 
-- Рендер запускайте отвязанным от сессии (через WMI или аналог и с переменной «detached» у рендерера): обрыв ssh убивает многоминутный рендер.
-- Две версии ставьте в один скрипт последовательно, а не одновременно на одну видеокарту: каждая идёт по 13 минут и не мешает другой.
-- После переноса на машину рендера сверяйте контрольные суммы всех файлов, кроме кадров записей: одна забытая правка стоит 13 минут перерендера.
-- Детекторы пересечений и рывков гоняйте до полного рендера: проход стоит минуты, рендер — от 13 минут (навык `video-3d-animation`, `frame-checks.md`).
-- Если между версиями меняется только звук, картинку не перерендеривайте — см. `mux-and-delivery.md`.
+- Launch the render detached from the session (through WMI or an equivalent and with the "detached" variable of the renderer): an ssh disconnect kills a many-minute render.
+- Put two versions into one script sequentially, not simultaneously onto one video card: each takes 13 minutes and does not interfere with the other.
+- After moving to the render machine, compare the checksums of all files except the recording frames: one forgotten edit costs 13 minutes of re-rendering.
+- Run the detectors of intersections and jerks before the full render: a pass costs minutes, a render — from 13 minutes (the `video-3d-animation` skill, `frame-checks.md`).
+- If between versions only the sound changes, do not re-render the picture — see `mux-and-delivery.md`.

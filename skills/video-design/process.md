@@ -1,17 +1,17 @@
-# Порядок работы и проверка кадров
+# Order of work and checking frames
 
-## Процесс, который сработал [Визуал]
+## The process that worked [Визуал]
 
-1. **Сначала статичные кадры, серией «до → действие → после», с разметкой движения** (рамка камеры, траектория, удар в долю). Спорить о кадре дешевле, чем о ролике.
-2. **Независимая проверка кадров** — до сборки ролика и после каждой волны правок.
-3. **Ролик собирается из тех же кадров**, а не рисуется заново: один источник вёрстки для концепта и видео, генератор добавляет только движение.
-4. **Звук вшивается отдельно, без перерендера картинки** — см. навык `video-render`, файл `mux-and-delivery.md`.
+1. **First static frames, as a "before → action → after" series, with motion marked up** (camera frame, trajectory, hit on the beat). Arguing about a frame is cheaper than arguing about a video.
+2. **Independent check of the frames** — before the video is assembled and after each wave of edits.
+3. **The video is assembled from the same frames**, not drawn anew: one layout source for the concept and the video, the generator adds only motion.
+4. **Sound is muxed in separately, without re-rendering the picture** — see the `video-render` skill, file `mux-and-delivery.md`.
 
-## Проверка кадров перед сдачей
+## Checking frames before delivery
 
-- [Видео] Снимок каждого слайда на 70 % его длины, лист кадров глазами. Затем независимая проверка другой моделью по тем же кадрам: переносы, обрезка, наложения, мелкий текст.
-- [Визуал] Конечное состояние каждого кадра снимайте до начала следующего перехода; кадр внутри растворения — смесь двух слайдов.
-- [Визуал] Ревьюеру-модели — строгая формулировка, место каждого пересечения в процентах кадра, не больше дюжины кадров за раз.
-- [Визуал] После любой правки текста — повторный проход; спорные кадры — в каждом языке отдельно.
-- [Визуал] Разбор ревьюера держите файлом рядом с работой: что нашли, что поправили, результат каждого прохода.
-- [Визуал] Для каждого стыка — три кадра (конец шота, середина растворения, начало следующего) и отдельно кадры посреди движения.
+- [Видео] A snapshot of each slide at 70 % of its length, a sheet of frames by eye. Then an independent check by another model on the same frames: line breaks, cropping, overlaps, small text.
+- [Визуал] Take the final state of each frame before the next transition begins; a frame inside a dissolve is a mix of two slides.
+- [Визуал] For the reviewer model — a strict wording, the place of each intersection in percent of the frame, no more than a dozen frames at a time.
+- [Визуал] After any text edit — a repeat pass; disputed frames — in each language separately.
+- [Визуал] Keep the reviewer's analysis as a file next to the work: what was found, what was fixed, the result of each pass.
+- [Визуал] For each join — three frames (end of the shot, middle of the dissolve, start of the next) and, separately, frames in the middle of motion.

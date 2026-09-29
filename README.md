@@ -1,64 +1,64 @@
 # video-skills
 
-Набор скиллов для Claude Code по производству роликов: промо и презентаций о программах, роликов из схемных кадров, трёхмерных роликов в браузере и стилизаций под советский научпоп.
+A set of Claude Code skills for producing videos: promos and presentations about programs, videos built from schematic frames, three-dimensional videos in the browser, and stylizations in the manner of Soviet popular-science film.
 
-Скиллы собраны из уроков, записанных по ходу прошлых роликов. Каждый совет восходит к фразе одного из этих уроков, ничего сверх них не добавлено. У каждого совета в квадратных скобках стоит источник. Где источники расходятся, приведены оба совета с пометкой, к какому случаю каждый относится.
+The skills are assembled from lessons recorded in the course of past videos. Every piece of advice traces back to a phrase from one of those lessons; nothing has been added beyond them. Each piece of advice has its source in square brackets. Where the sources disagree, both pieces of advice are given, with a note on which case each applies to.
 
-## Скиллы
+## Skills
 
-| Скилл | Тема | Когда срабатывает |
+| Skill | Topic | When it triggers |
 |---|---|---|
-| `video-design` | Дизайн и картинка | схемы и линии, термины с примерами, сколько держать слайд, переходы, камера, заголовки, стилизация под научпоп и диафильм |
-| `video-audio` | Обработка звука и озвучка | фон и звуковые события, сведение голоса и музыки, LUFS и пики, синтез озвучки, «архивный» голос с помехами |
-| `video-3d-animation` | 3D-анимация | руки и тело от первого лица, контакт с предметами, смешивание поз, расталкивание, свет и материалы, детекторы пересечений и рывков |
-| `video-ui-capture` | Запись интерфейса | покадровая съёмка браузера, демо-стенд, курсор, метки, обрезка и наезды, вторая языковая версия |
-| `video-render` | Рендер и оптимизация | грабли покадрового рендера, детерминизм, NVENC и битрейт, запуск рендера, вшивание звука, проверка готового файла |
+| `video-design` | Design and visuals | diagrams and lines, terms with examples, how long to hold a slide, transitions, camera, titles, stylization in the manner of popular science and filmstrips |
+| `video-audio` | Audio processing and voiceover | background and sound events, mixing voice and music, LUFS and peaks, voiceover synthesis, an "archive" voice with interference |
+| `video-3d-animation` | 3D animation | first-person hands and body, contact with objects, pose blending, pushing apart, light and materials, detectors of intersections and jerks |
+| `video-ui-capture` | Interface recording | frame-by-frame browser capture, demo stand, cursor, marks, cropping and push-ins, second language version |
+| `video-render` | Rendering and optimization | pitfalls of frame-by-frame rendering, determinism, NVENC and bitrate, launching a render, muxing in the audio, checking the finished file |
 
-В каждой папке `skills/<имя>/` лежит `SKILL.md` — описание, по которому скилл срабатывает, и короткие правила, — и рядом файлы с подробностями, на которые `SKILL.md` ссылается.
+Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the skill triggers, and short rules — and next to it files with details, which `SKILL.md` refers to.
 
-## Источники
+## Sources
 
-| Метка | Откуда |
+| Label | Where from |
 |---|---|
-| [Звук] | архивные уроки по звуку и озвучке промо-роликов и презентаций |
-| [Видео] | архивные уроки по видео: записи интерфейса, темп, переходы |
-| [Визуал] | архивные уроки по визуалу промо-роликов из схемных кадров (HTML-кадры → покадровый рендер) |
-| [3D] | уроки трёхмерного ролика от первого лица в браузере (three.js → покадровый рендер) |
-| [Научпоп] | уроки ролика в стилистике советского научно-популярного кино и диафильма начала 70-х |
+| [Звук] | archive lessons on sound and voiceover of promo videos and presentations |
+| [Видео] | archive lessons on video: interface recordings, pace, transitions |
+| [Визуал] | archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render) |
+| [3D] | lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render) |
+| [Научпоп] | lessons of a video in the style of Soviet popular-science film and early-70s filmstrips |
 
-## Где источники расходятся
+## Where the sources disagree
 
-- Непрерывный фон: «между событиями — тишина, а не подложка» [Звук] против непрерывного слоя эфирных помех под архивным голосом [Научпоп] — `video-audio/sound-design.md`, `archive-voice.md`.
-- Подгонка голоса: резать голос по тишине и ставить фразы в слайды [Видео] против «пересаживать картинку на готовую сетку голоса с помехами, звук не резать» [Научпоп]; не растягивать фразу под картинку [Видео] против ускорения всей дорожки через atempo [Звук] — `video-audio/voiceover.md`.
-- Удержание слайда после фразы: 1–1,5 с [Видео] против 2 с [Научпоп]; скорость чтения 2,4 [Видео] против 2,7 слова в секунду [Визуал] — `video-design/pacing-and-transitions.md`.
-- Интерфейс в кадре: только настоящая запись [Видео] против интерфейса, нарисованного заново в каждом кадре стилизованного ролика [Научпоп]; курсор из событий записи [3D] против курсора по ключевым точкам [Научпоп] — `video-ui-capture/framing.md`.
+- Continuous background: "between events — silence, not a bed" [Звук] versus a continuous layer of ether interference under the archive voice [Научпоп] — `video-audio/sound-design.md`, `archive-voice.md`.
+- Fitting the voice: cut the voice at silence and place the phrases into slides [Видео] versus "re-seat the picture onto the ready grid of the voice with interference, do not cut the sound" [Научпоп]; do not stretch a phrase to fit the picture [Видео] versus speeding up the whole track via atempo [Звук] — `video-audio/voiceover.md`.
+- Holding a slide after the phrase: 1–1.5 s [Видео] versus 2 s [Научпоп]; reading speed 2.4 [Видео] versus 2.7 words per second [Визуал] — `video-design/pacing-and-transitions.md`.
+- Interface in the frame: only a real recording [Видео] versus an interface redrawn in every frame of a stylized video [Научпоп]; cursor from the recording's events [3D] versus cursor from key points [Научпоп] — `video-ui-capture/framing.md`.
 
-## Как подключить
+## How to install
 
-Репозиторий приватный, клонируйте его под своим аккаунтом:
+The repository is private; clone it under your own account:
 
 ```bash
 gh repo clone ascorblack/video-skills ~/video-skills
 ```
 
-**Вариант 1 — личные скиллы, во всех проектах.** Скопируйте или слинкуйте папки скиллов в `~/.claude/skills/`:
+**Option 1 — personal skills, in all projects.** Copy or symlink the skill folders into `~/.claude/skills/`:
 
 ```bash
 mkdir -p ~/.claude/skills
 for d in ~/video-skills/skills/*/; do ln -s "$d" ~/.claude/skills/; done
 ```
 
-**Вариант 2 — только в одном проекте.** То же самое, но в папку `.claude/skills/` внутри проекта.
+**Option 2 — in a single project only.** The same, but into the `.claude/skills/` folder inside the project.
 
-**Вариант 3 — как плагин на одну сессию.** В корне репозитория лежит `.claude-plugin/plugin.json`, поэтому его можно загрузить целиком:
+**Option 3 — as a plugin for one session.** The repository root holds `.claude-plugin/plugin.json`, so it can be loaded as a whole:
 
 ```bash
 claude --plugin-dir ~/video-skills
 ```
 
-После подключения скиллы срабатывают сами, когда задача совпадает с их описанием; вызвать скилл явно можно по имени: `/video-audio` в вариантах 1–2, `/video-skills:video-audio` в варианте 3.
+Once installed, the skills trigger on their own when a task matches their description; a skill can be invoked explicitly by name: `/video-audio` in options 1–2, `/video-skills:video-audio` in option 3.
 
-## Структура
+## Structure
 
 ```
 .claude-plugin/plugin.json

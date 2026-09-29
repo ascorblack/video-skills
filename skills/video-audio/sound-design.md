@@ -1,43 +1,43 @@
-# Музыка и звуковое оформление
+# Music and sound design
 
-## Сначала договориться о характере [Звук]
+## First agree on the character [Звук]
 
-- Первый вариант почти всегда оказывается «слишком»: слишком жёсткий, быстрый или плотный. Для фона под ролик надёжнее начинать со спокойного и лёгкого, а добавлять по просьбе.
-- Если просят «звука мало», это не значит «добавь музыку». Часто хотят больше тех же звуков: ударов, щелчков, дропов в выбранном стиле. Уточняйте, что именно добавить: жанр не менять, добавлять в нём.
-- Когда стиль принят, его нельзя подменять при доработках. Продлить, укоротить, ускорить — всё делается теми же инструментами и в том же темпе.
+- The first version almost always turns out "too much": too harsh, fast or dense. For a background under a video it is more reliable to start with calm and light, and add on request.
+- If they ask for "not enough sound", it does not mean "add music". Often they want more of the same sounds: hits, clicks, drops in the chosen style. Clarify what exactly to add: do not change the genre, add within it.
+- Once a style is accepted, it must not be substituted during revisions. Extending, shortening, speeding up — all is done with the same instruments and at the same tempo.
 
-## Фоновые слои: чего избегать [Звук]
+## Background layers: what to avoid [Звук]
 
-- **Непрерывный фон раздражает.** Шорохи, тики на каждую шестнадцатую, «данные на заднем плане» воспринимаются как «что-то крадётся». Между событиями должна быть тишина, а не подложка.
-- **Ровный пульс обещает развязку.** Если сердцебиение или бочка звучит без изменений, слушатель ждёт дропа; если дропа нет, ожидание обманывается. Пульс между кульминациями делайте реже и тише, а к кульминации нарастайте.
-- **Не меняйте темп перед дропом.** Резкое ускорение (доли → восьмые) слышно как сбой. Подвод строится на той же сетке: заполнить пропущенные доли, плавно поднять громкость, дать короткий вдох и только потом удар.
-- **Периодический повтор одного куска шума даёт тон.** Кусок в 30 мс, повторённый ровно, звучит как гудение на ~33 Гц. Для «заикания» и глитча берите каждый раз новый кусок разной длины.
-- **Сигнал ошибки — не дроп.** Зуммер хорош на ошибке в кадре, но кульминацию он не заменяет. Дроп — это заметный удар с коротким подводом.
-- **Без мелодии — значит без мелодии.** Если просили «только технические звуки», проверяйте спектр на тональные пики: баса, пэда, нот и аккордов быть не должно.
+- **A continuous background irritates.** Rustles, ticks on every sixteenth, "data in the background" are perceived as "something is sneaking". Between events there must be silence, not a bed.
+- **An even pulse promises a resolution.** If a heartbeat or a kick sounds unchanged, the listener waits for a drop; if there is no drop, the expectation is cheated. Make the pulse between climaxes sparser and quieter, and build up toward the climax.
+- **Do not change the tempo before a drop.** A sharp speed-up (beats → eighths) is heard as a glitch. The lead-in is built on the same grid: fill in the skipped beats, smoothly raise the volume, give a short breath and only then the hit.
+- **Periodic repetition of one piece of noise gives a tone.** A piece of 30 ms, repeated exactly, sounds like a hum at ~33 Hz. For "stutter" and glitch take a new piece of different length each time.
+- **An error signal is not a drop.** A buzzer is good on an error in the frame, but it does not replace the climax. A drop is a noticeable hit with a short lead-in.
+- **No melody means no melody.** If they asked for "only technical sounds", check the spectrum for tonal peaks: there must be no bass, pad, notes or chords.
 
-### Где источники расходятся: непрерывный фон
+### Where the sources disagree: continuous background
 
-- [Звук] — фоновые слои музыки и звукового оформления промо: непрерывный фон раздражает, между событиями — тишина, а не подложка.
-- [Научпоп] — слой эфирных помех под «архивным» голосом: помехи идут непрерывно на всю длину ролика, под фразами, в паузах, под музыкой и до первого слова; вариант с шумом только внутри фраз забраковали, потому что в паузах эфир «выключался» и звук слышался склеенным из кусков. Подробно — `archive-voice.md`.
+- [Звук] — background layers of the music and sound design of a promo: a continuous background irritates, between events — silence, not a bed.
+- [Научпоп] — the layer of ether interference under the "archive" voice: the interference runs continuously for the whole length of the video, under phrases, in pauses, under the music and before the first word; the variant with noise only inside phrases was rejected, because in the pauses the ether "switched off" and the sound was heard as glued together from pieces. In detail — `archive-voice.md`.
 
-## Паузы и совпадение с картинкой [Звук]
+## Pauses and matching the picture [Звук]
 
-- Звуковые события ставьте на момент, который виден, а не на начало анимации. Штамп, который летит 0,2 с, «бьёт» в конце полёта, вместе с тряской камеры.
-- Время берите из самой анимации, с точностью до смещения внутри сцены, а не из раскадровки.
-- Если сцены удлинили, события переносятся по правилу «та же сцена, то же смещение от её начала». Паузы при этом растягиваются вместе со сценами, и десятки секунд тишины звучат как пропажа звука. Длинные паузы заполняйте редким тихим пульсом (раз в такт, заметно тише основного). Полную тишину оставляйте только там, где она драматургически нужна, и на 2–3 секунды.
-- При постоянном темпе такт редко делит интервалы между разделами ровно. Не меняйте темп: удлините тихий такт перед акцентом на долю (вдох перед ударом) или выберите сдвиг сетки, при котором ошибка минимальна. Акцент чуть позже появления кадра лучше, чем раньше.
-- Фраза диктора должна начинаться после того, как слайд проявился, и заканчиваться до начала следующего. Проверяйте каждую фразу, а не только общую длину.
+- Place sound events on the moment that is visible, not on the start of the animation. A stamp that flies for 0.2 s "hits" at the end of the flight, together with the camera shake.
+- Take the time from the animation itself, down to the offset within the scene, not from the storyboard.
+- If the scenes were lengthened, the events are moved by the rule "the same scene, the same offset from its start". The pauses stretch along with the scenes, and tens of seconds of silence sound like a loss of sound. Fill long pauses with a rare quiet pulse (once per bar, noticeably quieter than the main one). Leave full silence only where it is needed dramaturgically, and for 2–3 seconds.
+- At a constant tempo a bar seldom divides the intervals between sections evenly. Do not change the tempo: lengthen the quiet bar before an accent by a beat (a breath before the hit) or choose a grid shift at which the error is minimal. An accent slightly later than the frame appears is better than earlier.
+- The narrator's phrase must start after the slide has appeared and end before the next one begins. Check each phrase, not only the total length.
 
-[Визуал] Перед вшиванием звука сверьте таймкоды событий кадра с дропами трека и напишите звукорежиссёру фактические времена, если расхождение больше секунды.
+[Визуал] Before muxing in the sound, compare the timecodes of the frame's events with the drops of the track and write the sound engineer the actual times if the discrepancy is more than a second.
 
-## Склейка и удлинение музыки [Звук]
+## Splicing and extending music [Звук]
 
-- Готовый звук не режьте. Пересоберите композицию по карте «старый такт → новое место»: каждая нота переставляется целиком, хвосты и реверб считаются в новом времени, и стыков не слышно.
-- Резать и повторять удобно блоками по 4 такта с полным циклом аккордов, чтобы на стыке гармония шла естественно.
-- Такт, где был подъём к кульминации, нельзя ставить перед обычным куплетом: подъём уйдёт в никуда. Заменяйте его тактом с тем же аккордом без подъёма.
-- Если бывший акцентный такт попал на стык, верните перед ним подъём. Иначе акцент входит резко, без подготовки.
-- Стыки проверяйте замером: скачок спектра на стыке сравнивайте с обычной сменой такта. Выделяться должны только задуманные места.
-- Если генерация зависит от случайных чисел, сохраняйте их последовательность: ноты генерируйте в том же порядке, даже когда часть из них выбрасывается. Тогда удлинённая версия совпадает с исходной до сэмпла, и это легко доказать.
-- После любых правок генератора проверяйте, что прежние версии пересобираются побайтно так же.
+- Do not cut finished sound. Reassemble the composition by a map "old bar → new place": each note is moved whole, tails and reverb are computed in the new time, and no joins are heard.
+- It is convenient to cut and repeat in blocks of 4 bars with a full cycle of chords, so that the harmony goes naturally at the join.
+- A bar where there was a rise to the climax must not be placed before an ordinary verse: the rise will go nowhere. Replace it with a bar with the same chord without a rise.
+- If a former accent bar landed on a join, put the rise back before it. Otherwise the accent enters abruptly, without preparation.
+- Check joins by measurement: compare the jump of the spectrum at the join with an ordinary bar change. Only the intended places should stand out.
+- If the generation depends on random numbers, preserve their sequence: generate the notes in the same order, even when some of them are thrown away. Then the extended version matches the original down to the sample, and this is easy to prove.
+- After any edits of the generator, check that the earlier versions reassemble byte for byte the same.
 
-[Видео] Музыку длиннее ролика обрезайте с затуханием в конце. Лучше — попросить трек под точную длину и акценты на смены глав.
+[Видео] Trim music longer than the video with a fade at the end. Better — ask for a track to the exact length and accents on chapter changes.

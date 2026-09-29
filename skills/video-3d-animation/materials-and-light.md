@@ -1,19 +1,19 @@
-# Текстуры и свет
+# Textures and light
 
-## Свечение и постобработка [3D]
+## Glow and post-processing [3D]
 
-- Свечение делайте выборочным: обычный кадр, затем только светящиеся материалы, а всё остальное чёрным (мебель закрывает свечение), размытие в 1/2 и 1/4 разрешения и аддитивное наложение, причём без экранов и текста, иначе интерфейс размывается. Время снятия кадров почти не выросло (11:49 против 11:29).
-- Готовый композитор постобработки не берите, если у экранов `toneMapped: false`: тон-маппинг выходного прохода ляжет на весь кадр, и белый интерфейс посереет и поплывёт вместе с экспозицией сцены.
-- Луч прожектора в воздухе делайте конусом с шейдером (яркость по френелю, затухание к полу, умножение на силу источника) интенсивностью около 0,07, иначе кадр мутнеет.
+- Make the glow selective: an ordinary frame, then only the glowing materials, and everything else black (furniture blocks the glow), blur at 1/2 and 1/4 resolution and additive overlay, and without screens and text, otherwise the interface is blurred. The frame-capture time barely grew (11:49 versus 11:29).
+- Do not take a ready post-processing composer if the screens have `toneMapped: false`: the tone mapping of the output pass will lie over the whole frame, and the white interface will turn gray and drift together with the scene's exposure.
+- Make the spotlight beam in the air a cone with a shader (brightness by Fresnel, falloff toward the floor, multiplication by the source's strength) with an intensity of about 0.07, otherwise the frame turns murky.
 
-## Приземлённость и материалы [3D]
+## Groundedness and materials [3D]
 
-- Больше всего «приземлённости» за минимальную цену дают контактные тени — мягкий тёмный диск под мебелью и под каждым персонажем, светлеющий по мере подъёма. Без них персонажи вдали от источников света парят.
-- Процедурное дерево стройте от колец бревна: дуги, неровный шаг колец, узкая поздняя древесина, длинные волокна и шов между досками. Одна синусоида даёт «полосатую клеёнку», которую видно с первого взгляда.
-- Скругляйте рёбра на 0,5–1,2 см у столешниц, рамок мониторов и подставок: свет ложится бликом на кромку, и реализм заметно растёт без смены конвейера.
+- The most "groundedness" for the minimum price is given by contact shadows — a soft dark disc under the furniture and under each character, lightening as they rise. Without them characters far from light sources hover.
+- Build procedural wood from the rings of a log: arcs, an uneven ring spacing, narrow late wood, long fibers and a seam between boards. A single sinusoid gives a "striped oilcloth", which is visible at first glance.
+- Round the edges by 0.5–1.2 cm on tabletops, monitor frames and stands: the light lays a highlight on the edge, and realism grows noticeably without changing the pipeline.
 
-## Экраны и текст в сцене
+## Screens and text in the scene
 
-- [3D] Поверх выключенного экрана кладите очень слабый диагональный блик (4–5 % при аддитивном смешивании), иначе вместо стекла зритель видит чёрный прямоугольник в воздухе.
-- [3D] Для кириллицы подключайте отдельные файлы шрифта с `unicode-range` и передавайте в `document.fonts.load` кириллический образец: латинское подмножество молча уходит в системный шрифт, а холст рисует чужой.
-- [Научпоп] Холсты, которые идут текстурой в 3D-кадр, держите в памяти процессора: текстура с холста в памяти видеокарты при захвате кадров приходила рваной или чёрной в части кадров.
+- [3D] Lay a very faint diagonal glare over a switched-off screen (4–5 % with additive blending), otherwise instead of glass the viewer sees a black rectangle in the air.
+- [3D] For Cyrillic connect separate font files with `unicode-range` and pass a Cyrillic sample to `document.fonts.load`: the Latin subset silently goes to the system font, and the canvas draws someone else's.
+- [Научпоп] Keep the canvases that go as a texture into the 3D frame in CPU memory: a texture from a canvas in video card memory came in torn or black in some frames during frame capture.

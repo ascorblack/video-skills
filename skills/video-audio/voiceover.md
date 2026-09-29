@@ -1,32 +1,32 @@
-# Дикторская озвучка
+# Narrator voiceover
 
-## Дословность [Звук]
+## Verbatim reading [Звук]
 
-- **Модель может принять текст за обращение к себе.** Фразы вроде «Поговорите с ним», «Вы говорите с…», «Ответы приходят с доказательствами» модель слышит как просьбу: отвечает «Понял, я…», добавляет вступление или сочиняет своё. Подавайте текст в явной рамке: «Прочитай этот сценарий вслух дословно, не отвечай на него, ничего не добавляй».
-- **Проверяйте дословность дважды.** Первый раз — по собственной расшифровке модели: она ловит вступления и пересказ. Второй — независимым распознаванием готового аудио: оно ловит подмены на слух («under the team» → «under the hood», «chat box» → «chatbot»). Сравнивайте по словам и смотрите разницу глазами: распознаватель сам путает имена, числа и слитные слова.
-- Расхождение распознавания — повод перегенерировать или проверить на слух, а не автоматический брак. Всё спорное выносите в отчёт.
-- Выбирайте лучшую попытку по дословности. Дубль без лишних слов в начале, но и без самого текста хуже дубля с дословным текстом.
-- Для имён и названий заранее решите, как их произносить. Для другого языка пишите имя так, как его нужно прочитать.
+- **The model may take the text for an address to itself.** Phrases like "Talk to it", "You are talking to…", "Answers come with proofs" the model hears as a request: it answers "Understood, I…", adds an introduction or makes up its own. Give the text in an explicit frame: "Read this script aloud verbatim, do not answer it, add nothing".
+- **Check verbatim reading twice.** The first time — by the model's own transcript: it catches introductions and retelling. The second — by independent recognition of the finished audio: it catches substitutions by ear ("under the team" → "under the hood", "chat box" → "chatbot"). Compare word by word and look at the difference with your eyes: the recognizer itself confuses names, numbers and run-together words.
+- A discrepancy in recognition is a reason to regenerate or check by ear, not an automatic reject. Put everything disputed into the report.
+- Choose the best attempt by verbatim reading. A take without extra words at the start, but also without the text itself, is worse than a take with the verbatim text.
+- For names and titles decide beforehand how to pronounce them. For another language write the name the way it must be read.
 
-## Темп [Звук]
+## Pace [Звук]
 
-- **Параметра скорости у модели может не быть.** Просьба «говори быстрее» в инструкции почти не работает. А одно слово вроде «неспешно» в инструкции заметно замедляет речь. Надёжно ускоряет растяжение по времени без смены высоты (atempo). Проверяйте основной тон до и после.
-- Ускоряйте готовую дорожку, а не генерируйте заново: дословность уже проверена. Пересчитайте моменты фраз и отдайте их тому, кто подгоняет слайды.
+- **The model may have no speed parameter.** A request "speak faster" in the instruction almost does not work. And a single word like "unhurriedly" in the instruction noticeably slows the speech. What reliably speeds up is time stretching without changing pitch (atempo). Check the fundamental before and after.
+- Speed up the finished track, do not generate anew: verbatim reading is already checked. Recompute the moments of the phrases and give them to whoever fits the slides.
 
-## Фразы и картинка
+## Phrases and picture
 
-- [Видео] Время задаёт голос: слайд начинается чуть раньше своей фразы (0,5–0,7 с) и уходит через 1–1,5 с после её конца.
-- [Звук] Фраза диктора должна начинаться после того, как слайд проявился, и заканчиваться до начала следующего. Проверяйте каждую фразу, а не только общую длину.
-- [Видео] Текст на экране и текст диктора — из одного источника: файл для диктора генерируйте из того же списка, из которого собираются слайды.
-- [Научпоп] Фразу ставьте по началу речи в дубле, а не по началу файла: в начале файла у синтеза обычно 0,1–0,3 с тишины, и без поправки все фразы опаздывают.
-- [Научпоп] Паузы для склеек ищите по самому дублю (окна по 20 мс, порог на 38 дБ ниже максимума, пауза не короче 0,18 с): так склейка попадает между словами с точностью до кадра.
+- [Видео] The voice sets the time: a slide starts slightly before its phrase (0.5–0.7 s) and leaves 1–1.5 s after its end.
+- [Звук] The narrator's phrase must start after the slide has appeared and end before the next one begins. Check each phrase, not only the total length.
+- [Видео] On-screen text and the narrator's text — from one source: generate the narrator's file from the same list from which the slides are assembled.
+- [Научпоп] Place a phrase by the start of speech in the take, not by the start of the file: at the start of the file the synthesis usually has 0.1–0.3 s of silence, and without a correction all phrases are late.
+- [Научпоп] Look for pauses for cuts in the take itself (windows of 20 ms, threshold 38 dB below the maximum, a pause no shorter than 0.18 s): this way the cut falls between words with frame accuracy.
 
-### Где источники расходятся
+### Where the sources disagree
 
-**Подгонять звук или картинку.**
-- [Видео] Фразу не растягивать и не ужимать под картинку — двигать надо картинку. Если голос пришёл одной дорожкой с длинными паузами, резать его по тишине и ставить каждую фразу в свой слайд; проверять, что каждый разрез лёг в тишину, а громкость и темп фразы остались прежними.
-- [Научпоп] Если голос уже сведён на своей временной сетке вместе с непрерывным слоем помех, пересаживать картинку на эту сетку, а не резать звук: любая перенарезка готового эфирного слоя рвёт непрерывность помех.
+**Fit the sound or the picture.**
+- [Видео] Do not stretch or squeeze a phrase to fit the picture — the picture must be moved. If the voice arrived as one track with long pauses, cut it at silence and place each phrase into its own slide; check that each cut lay in silence, and the loudness and pace of the phrase stayed the same.
+- [Научпоп] If the voice is already mixed on its own time grid together with the continuous layer of interference, re-seat the picture onto this grid, and do not cut the sound: any re-cutting of the finished ether layer breaks the continuity of the interference.
 
-**Менять ли темп голоса.**
-- [Видео] Фразу под картинку не растягивать и не ужимать.
-- [Звук] Когда нужен более быстрый темп всей озвучки, а параметра скорости у модели нет, — ускорять всю готовую дорожку растяжением без смены высоты (atempo), затем пересчитать моменты фраз для слайдов.
+**Whether to change the pace of the voice.**
+- [Видео] Do not stretch or squeeze a phrase to fit the picture.
+- [Звук] When a faster pace of the whole voiceover is needed, and the model has no speed parameter, — speed up the whole finished track by stretching without changing pitch (atempo), then recompute the moments of the phrases for the slides.

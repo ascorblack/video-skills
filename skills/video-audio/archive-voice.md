@@ -1,27 +1,27 @@
-# «Архивный» голос и эфирные помехи [Научпоп]
+# The "archive" voice and ether interference [Научпоп]
 
-Всё в этом файле — из ролика в стилистике советского научно-популярного кино начала 70-х, где голос звучит «из архива».
+Everything in this file is from a video in the style of Soviet popular-science film of the early 70s, where the voice sounds "from the archive".
 
-## Цепочка обработки голоса
+## Voice processing chain
 
-- Собирайте цепочку в таком порядке: детонация (плавание 0,55 Гц на ±1,2 мс, дрожание 6,5 Гц на ±0,06 мс) → полосовой фильтр → эквалайзер → сильная компрессия → лёгкое насыщение → крошечная комната → слой помех. По отдельности каждое звено почти незаметно, а «эфир» слышен только от всех вместе.
-- Срезы частот подбирайте по спектру эталонной записи в третьоктавных полосах, а не на слух. Сработало: снизу 170 Гц крутизной 6-го порядка, сверху 5,6 кГц 8-го порядка, полка −4 дБ выше 3,2 кГц, присутствие +6 дБ на 2,2 кГц. Начальные «на слух» 300 Гц / 6 кГц совпадали с эталоном заметно хуже.
-- Компрессию делайте жёсткой (порог −40 дБ, соотношение 12:1): ровная громкость без живых перепадов — главный признак вещания того времени.
-- Насыщение — мягкое (гиперболический тангенс с усилением 2,2), комната — очень маленькая (отклик 120 мс, уровень −24 дБ). С бо́льшими значениями голос звучит «в зале», а не «в эфире».
+- Build the chain in this order: wow and flutter (drift 0.55 Hz at ±1.2 ms, jitter 6.5 Hz at ±0.06 ms) → band-pass filter → equalizer → heavy compression → light saturation → a tiny room → the interference layer. Taken separately, each link is almost imperceptible, and the "ether" is heard only from all of them together.
+- Choose the frequency cuts by the spectrum of a reference recording in third-octave bands, not by ear. What worked: from below 170 Hz with a 6th-order slope, from above 5.6 kHz of the 8th order, a shelf of −4 dB above 3.2 kHz, presence +6 dB at 2.2 kHz. The initial "by ear" 300 Hz / 6 kHz matched the reference noticeably worse.
+- Make the compression hard (threshold −40 dB, ratio 12:1): even loudness without live swings is the main sign of the broadcasting of that time.
+- The saturation is soft (hyperbolic tangent with gain 2.2), the room is very small (response 120 ms, level −24 dB). With larger values the voice sounds "in a hall", not "on the air".
 
-## Слой помех
+## The interference layer
 
-- Собирайте помехи из трёх слоёв: шипение плёнки −54 dBFS в полосе 1,5–8 кГц; радиошум −56 dBFS в полосе 250–3500 Гц с медленным колебанием ±35 % на 0,23 Гц; редкий треск около 0,35 щелчка в секунду на −30…−22 дБ. Один белый шум звучит как неисправность, а не как эфир.
-- Помехи пускайте непрерывно на всю длину ролика — под фразами, в паузах, под музыкой и до первого слова. Вариант с шумом только внутри фраз забраковали: в паузах эфир «выключался», и звук слышался склеенным из кусков.
-- Слой помех генерируйте один раз на весь ролик и добавляйте с одним постоянным усилением: при обработке и нормализации каждой фразы отдельно уровень шума скачет от фразы к фразе.
-- Непрерывность проверяйте замером: помехи в паузах и под фразами должны совпадать с точностью до 1 дБ (рабочий результат — −49,6 и −49,6 dBFS). Проверку на слух легко обмануть музыкой.
-- Под голосом приглушайте только музыку и не трогайте помехи, иначе шум проседает ровно под фразами, и склейка снова слышна.
+- Build the interference from three layers: film hiss −54 dBFS in the band 1.5–8 kHz; radio noise −56 dBFS in the band 250–3500 Hz with a slow fluctuation of ±35 % at 0.23 Hz; a rare crackle of about 0.35 clicks per second at −30…−22 dB. White noise alone sounds like a malfunction, not like ether.
+- Run the interference continuously for the whole length of the video — under phrases, in pauses, under the music and before the first word. The variant with noise only inside phrases was rejected: in the pauses the ether "switched off", and the sound was heard as glued together from pieces.
+- Generate the interference layer once for the whole video and add it with one constant gain: when each phrase is processed and normalized separately, the noise level jumps from phrase to phrase.
+- Check continuity by measurement: the interference in pauses and under phrases must match to within 1 dB (the working result — −49.6 and −49.6 dBFS). A check by ear is easily fooled by the music.
+- Under the voice duck only the music and do not touch the interference, otherwise the noise sags exactly under the phrases, and the join is audible again.
 
-Это расходится с общим советом [Звук] «между событиями — тишина, а не подложка»; тот совет — про фоновые слои музыки и звукового оформления промо, этот — про эфирный слой архивного голоса.
+This disagrees with the general advice [Звук] "between events — silence, not a bed"; that advice is about the background layers of the music and sound design of a promo, this one is about the ether layer of the archive voice.
 
-## Громкость и финал
+## Loudness and the finale
 
-- Голос вместе с помехами выводите на −16 LUFS одним усилением, а громкость меряйте только на участках с фразами: паузы с шумом занижают замер.
-- Музыку держите на −20 LUFS и приглушайте под фразами на 15 дБ (вниз за 0,25 с, начиная за 0,35 с до фразы, обратно за 0,45 с после неё).
-- В финале уводите музыку вместе с затемнением картинки, а помехи оставляйте до последних 0,25 с.
-- Если голос уже сведён на своей временной сетке, пересаживайте картинку на эту сетку, а не режьте звук: любая перенарезка готового эфирного слоя рвёт непрерывность помех.
+- Bring the voice together with the interference to −16 LUFS with a single gain, and measure loudness only on the sections with phrases: pauses with noise lower the measurement.
+- Keep the music at −20 LUFS and duck it under phrases by 15 dB (down over 0.25 s, starting 0.35 s before the phrase, back up over 0.45 s after it).
+- In the finale fade the music out together with the darkening of the picture, and leave the interference until the last 0.25 s.
+- If the voice is already mixed on its own time grid, re-seat the picture onto this grid, and do not cut the sound: any re-cutting of the finished ether layer breaks the continuity of the interference.

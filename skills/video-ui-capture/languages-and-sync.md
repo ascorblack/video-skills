@@ -1,12 +1,12 @@
-# Версия на другом языке и синхронизация с 3D-сценой [3D]
+# A version in another language and synchronization with the 3D scene [3D]
 
-## Вторая языковая версия записи
+## The second language version of the recording
 
-- В версии на другом языке набирайте текст за те же кадры, что и в оригинале, растягивая интервал между символами. Иначе фраза на 5 символов короче сдвигает все последующие клики на 0,25 с, и руки в сцене расходятся с экраном.
-- После съёмки второго языка сверяйте метки и клики с оригиналом по кадрам: после выравнивания совпали все клики, кроме одного на 1 кадр, но без сверки одна запись вышла на 18 кадров короче из-за ожиданий загрузки.
-- Вступление до первого действия и хвост после последнего делайте такой же длины, как в оригинале: лишняя 1 с в начале и 4 с в конце сдвигают все метки.
+- In the version in another language type the text over the same frames as in the original, stretching the interval between characters. Otherwise a phrase 5 characters shorter shifts all the following clicks by 0.25 s, and the hands in the scene drift apart from the screen.
+- After shooting the second language, compare the marks and clicks with the original by frames: after alignment all clicks matched except one by 1 frame, but without the comparison one recording came out 18 frames shorter because of loading waits.
+- Make the intro before the first action and the tail after the last one of the same length as in the original: an extra 1 s at the start and 4 s at the end shift all the marks.
 
-## Руки в 3D-сцене по записи
+## Hands in the 3D scene by the recording
 
-- Мышь и пальцы в 3D-сцене двигайте по курсору, восстановленному из кадров записи (поиск шаблона стрелки с маской, порог «минимум/медиана» < 0,45, нажатие — тот же шаблон с масштабом 0,86): синхронным движение выглядит, только если взято из самой записи.
-- Масштаб хода мыши берите таким, чтобы весь экран приложения соответствовал примерно 15 см: при 27 см рука ездит по столу неестественно широко.
+- Move the mouse and fingers in the 3D scene by the cursor restored from the recording frames (matching of an arrow template with a mask, threshold "min/median" < 0.45, a press — the same template with a scale of 0.86): the movement looks synchronous only if taken from the recording itself.
+- Take the scale of the mouse travel such that the whole application screen corresponds to about 15 cm: at 27 cm the hand travels unnaturally wide over the table.

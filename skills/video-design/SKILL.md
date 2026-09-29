@@ -1,39 +1,39 @@
 ---
 name: video-design
-description: Правила картинки для роликов о программах и научно-популярных роликов — схемы и линии-связки, термины с прикладными примерами, сколько держать слайд, переходы без дёрганья, наезды камеры, заголовки и цифры в кадре, стилизация под советский научпоп и диафильм (гамма, шрифты, зерно, виньетка). Используй, когда проектируешь, рисуешь или правишь кадры, слайды, схемы, титры, переходы или стиль ролика и когда проверяешь кадры перед сборкой.
+description: Rules for the visuals of videos about programs and popular-science videos — diagrams and connector lines, terms with applied examples, how long to hold a slide, transitions without jerking, camera push-ins, titles and figures in the frame, stylization in the manner of Soviet popular science and filmstrips (palette, fonts, grain, vignette). Use when designing, drawing or editing frames, slides, diagrams, titles, transitions or the style of a video, and when checking frames before assembly.
 ---
 
-# Дизайн и картинка ролика
+# Design and visuals of a video
 
-Каждое правило взято из уроков прошлых роликов; в квадратных скобках — источник (легенда внизу).
-Где источники расходятся, приведены оба совета с пометкой, к какому случаю каждый.
+Every rule is taken from the lessons of past videos; the source is in square brackets (legend at the bottom).
+Where the sources disagree, both pieces of advice are given, with a note on which case each applies to.
 
-## Короткие правила
+## Short rules
 
-1. В конечном состоянии кадра линия не проходит сквозь блок, текст или другую линию. [Визуал] Линии-связки — прямые и в обход блоков. [Видео]
-2. Каждому термину — прикладной пример: сцена с участником, действием и числом. Одна мысль на слайд. [Визуал]
-3. Время показа слайда считайте, а не назначайте; длину ролика не задавайте раньше, чем посчитан текст. [Визуал] Нормы удержания у источников разные — см. `pacing-and-transitions.md`.
-4. Один переход на весь ролик, по умолчанию растворение; никакого масштабирования на стыках. [Видео] [Визуал] [Научпоп]
-5. Общие элементы соседних кадров стоят в тех же координатах и того же размера; следующий шот начинается с конечного состояния предыдущего. [Визуал]
-6. Надписи не дрожат и не исчезают раньше, чем их дочитали. [Видео]
-7. Числа в кадре — только проверенные командой, в формулировке того, что реально проверено. [Визуал]
-8. Текст на экране и текст диктора — из одного источника. [Видео]
-9. Сначала статичные кадры «до → действие → после», их независимая проверка, потом ролик из тех же кадров. [Визуал]
-10. Макеты интерфейса вместо записей не рисовать [Видео] — но в стилизованном научпопе интерфейс рисовали заново в каждом кадре [Научпоп]. Оба случая — в навыке `video-ui-capture`.
-11. Стилизация под научпоп: сдержанная гамма, деталь эпохи, камера без тряски, без мерцания и царапин. [Научпоп]
+1. In the final state of a frame, a line does not pass through a block, text or another line. [Визуал] Connector lines are straight and go around blocks. [Видео]
+2. Every term gets an applied example: a scene with a participant, an action and a number. One idea per slide. [Визуал]
+3. Count the display time of a slide, do not assign it; do not set the length of the video before the text has been counted. [Визуал] The hold norms differ between sources — see `pacing-and-transitions.md`.
+4. One transition for the whole video, a dissolve by default; no scaling at the joins. [Видео] [Визуал] [Научпоп]
+5. Shared elements of neighboring frames stand at the same coordinates and of the same size; the next shot starts from the final state of the previous one. [Визуал]
+6. Captions do not jitter and do not disappear before they have been read. [Видео]
+7. Figures in the frame — only those verified by the team, worded as what was actually verified. [Визуал]
+8. On-screen text and the narrator's text — from one source. [Видео]
+9. First static frames "before → action → after", their independent check, then the video from the same frames. [Визуал]
+10. Do not draw interface mockups instead of recordings [Видео] — but in the stylized popular-science video the interface was redrawn in every frame [Научпоп]. Both cases are in the `video-ui-capture` skill.
+11. Popular-science stylization: a restrained palette, period detail, a camera without shake, without flicker and scratches. [Научпоп]
 
-## Подробности
+## Details
 
-- `lines-and-layout.md` — линии на схемах, заголовки, цифры, подписи, как проверять пересечения.
-- `explanations.md` — термин + прикладной пример, числа, перевод.
-- `pacing-and-transitions.md` — сколько держать слайд, переходы, причины скачков на стыке, камера.
-- `retro-style.md` — плоская картинка в стиле научпопа и диафильма, плёночные эффекты.
-- `process.md` — порядок работы и проверка кадров перед сдачей.
+- `lines-and-layout.md` — lines on diagrams, titles, figures, captions, how to check intersections.
+- `explanations.md` — term + applied example, numbers, translation.
+- `pacing-and-transitions.md` — how long to hold a slide, transitions, causes of jumps at the join, camera.
+- `retro-style.md` — flat picture in the style of popular science and filmstrips, film effects.
+- `process.md` — order of work and checking frames before delivery.
 
-## Источники
+## Sources
 
-- [Звук] — архивные уроки по звуку и озвучке промо-роликов и презентаций.
-- [Видео] — архивные уроки по видео: записи интерфейса, темп, переходы.
-- [Визуал] — архивные уроки по визуалу промо-роликов из схемных кадров (HTML-кадры → покадровый рендер).
-- [3D] — уроки трёхмерного ролика от первого лица в браузере (three.js → покадровый рендер).
-- [Научпоп] — уроки ролика в стилистике советского научпопа и диафильма начала 70-х.
+- [Звук] — archive lessons on sound and voiceover of promo videos and presentations.
+- [Видео] — archive lessons on video: interface recordings, pace, transitions.
+- [Визуал] — archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render).
+- [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
+- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.

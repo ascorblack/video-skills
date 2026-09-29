@@ -1,20 +1,20 @@
-# Проверка 3D-кадров [3D]
+# Checking 3D frames [3D]
 
-## Детектор пересечений
+## Intersection detector
 
-- Пишите детектор пересечений, который без рендера проходит все кадры и проверяет точки персонажей, кистей и рукавов против каждого бокса мебели в его локальных координатах (допуск 4–6 мм) и против плоскостей экранов. 10 650 кадров на 60 fps проходят примерно за 25 минут на CPU, и он находит то, что глаз на контакт-листе пропускает.
-- У экранов считайте ошибкой только точки в толщине устройства (0–1,2 см за стеклом), а не всё за ним, иначе персонаж, держащий планшет, даёт сотни ложных находок.
-- Отдельно проверяйте кисть против её собственной манжеты: детектор против мебели этого не видит, и «кожа сквозь манжету» прошла целую версию незамеченной.
-- Добавьте проверку среза у камеры (точки рук ближе 9 см к глазу внутри поля зрения), иначе не поймать ближнюю плоскость, режущую рукав.
-- Декоративные плоскости (тени, блики, световые полосы) помечайте флагом «не препятствие», иначе детектор принимает их за экраны.
-- Вершины скиннингованной сетки берите только после `skeleton.update()`, иначе сотни ложных пересечений.
+- Write an intersection detector that goes through all frames without rendering and checks the points of characters, hands and sleeves against every furniture box in its local coordinates (tolerance 4–6 mm) and against the planes of screens. 10,650 frames at 60 fps pass in about 25 minutes on CPU, and it finds what the eye on a contact sheet misses.
+- For screens count as an error only the points within the thickness of the device (0–1.2 cm behind the glass), not everything behind it, otherwise a character holding a tablet gives hundreds of false findings.
+- Check the hand separately against its own cuff: a detector against furniture does not see this, and "skin through the cuff" passed a whole version unnoticed.
+- Add a check for clipping at the camera (hand points closer than 9 cm to the eye inside the field of view), otherwise the near plane cutting a sleeve cannot be caught.
+- Mark decorative planes (shadows, glares, light strips) with a "not an obstacle" flag, otherwise the detector takes them for screens.
+- Take the vertices of a skinned mesh only after `skeleton.update()`, otherwise hundreds of false intersections.
 
-## Детектор рывков
+## Jerk detector
 
-- Детектор рывков ставит флажок, когда шаг позиции или поворота камеры, кистей, корпусов, голов и варежек за кадр больше порога (3 см или 0,15 рад) и в 5 раз больше медианы соседей. Он же отмечает растяжение руки больше 8 %. На контакт-листах, где всё выглядело нормально, он нашёл 1453 рывка.
+- The jerk detector raises a flag when the per-frame step in position or turn of the camera, hands, torsos, heads and mittens is greater than the threshold (3 cm or 0.15 rad) and 5 times greater than the median of its neighbors. It also marks arm stretch of more than 8 %. On contact sheets where everything looked normal it found 1453 jerks.
 
-## Когда и чем дополнять
+## When and with what to supplement
 
-- Детектор гоняйте до полного рендера: проход стоит минуты, рендер — от 13 минут, и каждая находка до рендера экономит перерендер.
-- Детекторы не видят того, что не является пересечением или скачком: перекрытия интерфейса персонажем, нечитаемого текста, некрасивого света, висящего без контакта предмета и неверного порядка действий. Поэтому полноразмерные кадры в моментах действий всё равно смотрите глазами.
-- Даже после чистого детектора смотрите полноразмерные кадры готового файла в моментах действий: часть дефектов видна только при определённом повороте кисти и в одном кадре.
+- Run the detector before the full render: a pass costs minutes, a render — from 13 minutes, and every finding before the render saves a re-render.
+- Detectors do not see what is not an intersection or a jump: the interface being covered by a character, unreadable text, ugly light, an object hanging without contact and a wrong order of actions. Therefore still look at full-size frames at the moments of actions with your eyes.
+- Even after a clean detector, look at full-size frames of the finished file at the moments of actions: some defects are visible only at a certain turn of the hand and in a single frame.

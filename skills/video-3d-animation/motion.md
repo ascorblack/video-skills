@@ -1,28 +1,28 @@
-# Анимация: позы, пути, расталкивание
+# Animation: poses, paths, pushing apart
 
-## Сглаживание и смешивание [3D]
+## Smoothing and blending [3D]
 
-- Поскольку рендер идёт в несколько процессов и кадры считаются в любом порядке, сглаживайте позы запечённо: пройдите все кадры без рендера, сгладьте сырые позиции и курс гауссом, ширина которого растёт около скачков, и отдайте странице готовые поправки в JSON (у нас их понадобилось около 14 000 кадро-персонажей).
-- Углы смешивайте только коротким путём (`lerpAng`): обычный `lerp` курса между −π и π разворачивает персонажа на 2–3 рад за 0,3 с.
-- Любую смену позы («смотрит в камеру», «держит карточку», «у доски») делайте весом со смешиванием за 0,25–0,6 с: каждый переключатель `if (t > a)` даёт рывок курса или руки на один кадр.
-- Следующий блок анимации начинайте с позиции, где закончил предыдущий, а не с точки пути: именно на границах блоков нашлись телепорты на 0,7–2,8 м.
-- Поворот к камере и старт ходьбы считайте от сглаженной скорости (гаусс около 0,12 с), иначе в первый кадр движения курс переключается мгновенно.
+- Since the render runs in several processes and frames are computed in any order, smooth the poses baked: go through all frames without rendering, smooth the raw positions and heading with a Gaussian whose width grows near jumps, and give the page the ready corrections in JSON (we needed about 14,000 frame-characters of them).
+- Blend angles only by the short path (`lerpAng`): a plain `lerp` of heading between −π and π turns the character by 2–3 rad in 0.3 s.
+- Make any change of pose ("looks at the camera", "holds a card", "at the board") by weight with blending over 0.25–0.6 s: each `if (t > a)` switch gives a jerk of the heading or the hand for one frame.
+- Start the next animation block from the position where the previous one ended, not from a point of the path: it was exactly at block boundaries that teleports of 0.7–2.8 m were found.
+- Compute the turn to the camera and the start of walking from a smoothed speed (Gaussian about 0.12 s), otherwise in the first frame of movement the heading switches instantly.
 
-## Кисти и хват
+## Hands and grip
 
-- [3D] Кисть, которая поворачивается больше чем на 140°, ведите через промежуточную позу («рукопожатие»): `slerp` почти противоположных кватернионов меняет путь от кадра к кадру и переворачивает кисть за кадр.
-- [3D] Когда рука отпускает движущийся предмет (ручку распахивающейся двери), замораживайте точку захвата на момент отпускания, иначе кисть тянется за полотном и рука растягивается до 1,45×.
-- [Научпоп] Кисть на дверной ручке привязывайте к самой ручке и ведите вместе с её поворотом и с поворотом двери: кисть, анимированная отдельно, соскальзывает с ручки уже через несколько кадров.
-- [Научпоп] Большой палец поворачивайте в порядке «вращение вокруг оси пальца → сгиб к ладони → отведение»: при другом порядке он торчал в сторону от ручки, и это было заметно сразу.
+- [3D] Lead a hand that turns by more than 140° through an intermediate pose ("handshake"): `slerp` of almost opposite quaternions changes the path from frame to frame and flips the hand in a frame.
+- [3D] When the arm releases a moving object (the handle of a swinging door), freeze the grip point at the moment of release, otherwise the hand is dragged after the leaf and the arm stretches to 1.45×.
+- [Научпоп] Bind the hand on a door handle to the handle itself and lead it together with the handle's turn and with the turn of the door: a hand animated separately slides off the handle within a few frames.
+- [Научпоп] Turn the thumb in the order "rotation around the finger axis → bend to the palm → abduction": with another order it stuck out to the side of the handle, and this was noticeable at once.
 
-Предмет в руке и переход предмета между опорами — `body-and-hands.md`.
+An object in the hand and an object passing between supports — `body-and-hands.md`.
 
-## Персонажи в толпе и путь
+## Characters in a crowd and the path
 
-- [3D] Расталкивание персонажей делайте мягким смещением от пути: не быстрее 0,7 м/с, с затуханием обратно, а при лобовой встрече — шагом вправо. Жёсткая проекция при встрече лоб в лоб меняет сторону за кадр, и персонаж прыгает на 0,3–0,6 м.
-- [Научпоп] Бегущие фигуры разводите плавным отталкиванием друг от друга в каждом кадре, а от мебели — выталкиванием из прямоугольников с запасом больше радиуса фигуры (около 0,1 м): иначе они пробегают сквозь столы и друг сквозь друга.
-- [Научпоп] Путь фигуры считайте заранее с частотой 240 выборок в секунду, а шаг ног берите из пройденного расстояния, а не из времени: иначе ноги скользят по полу при разгоне и торможении.
+- [3D] Make the pushing apart of characters a soft offset from the path: no faster than 0.7 m/s, with decay back, and at a head-on meeting — a step to the right. A hard projection at a head-on meeting changes side in a frame, and the character jumps by 0.3–0.6 m.
+- [Научпоп] Separate running figures with a smooth pushing away from each other in every frame, and from furniture — by pushing out of rectangles with a margin greater than the figure's radius (about 0.1 m): otherwise they run through tables and through each other.
+- [Научпоп] Compute the figure's path in advance at a rate of 240 samples per second, and take the step of the legs from the distance traveled, not from time: otherwise the legs slide on the floor during acceleration and braking.
 
-## Жизнь между репликами [3D]
+## Life between remarks [3D]
 
-- Жизнь между репликами дают дешёвые вещи с разной фазой у каждого персонажа: моргание раз в 2,6–3,9 с, дыхание, перенос веса, диоды, которые мигают во время работы, экран, который включается полосой за 0,35 с.
+- Life between remarks is given by cheap things with a different phase for each character: blinking once per 2.6–3.9 s, breathing, weight shift, diodes that blink during work, a screen that switches on with a strip over 0.35 s.

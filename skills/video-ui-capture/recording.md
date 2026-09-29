@@ -1,33 +1,33 @@
-# Как снимать интерфейс
+# How to shoot the interface
 
-## Покадровая съёмка
+## Frame-by-frame capture
 
-- [Видео] Снимайте только настоящий интерфейс, покадрово. Браузер ведётся по виртуальному времени: кадр продвинул, кадр снял. Тогда 60 fps честные при любой нагрузке машины, а повторный дубль совпадает с прежним кадр в кадр. Экранная запись в реальном времени рвёт кадры и «плывёт».
-- [3D] Интерфейс снимайте покадрово в headless Chrome в детерминированном режиме (`beginFrame` и виртуальное время по 1/60 с на кадр): скринкаст 2560×1440 даёт около 23 fps с пропусками, а покадровая съёмка — ровно 60 кадров на секунду времени приложения.
+- [Видео] Shoot only the real interface, frame by frame. The browser is driven by virtual time: advanced a frame, took a frame. Then 60 fps are honest under any load of the machine, and a repeated take matches the previous one frame for frame. A real-time screen recording tears frames and "drifts".
+- [3D] Shoot the interface frame by frame in headless Chrome in a deterministic mode (`beginFrame` and virtual time of 1/60 s per frame): a 2560×1440 screencast gives about 23 fps with gaps, and frame-by-frame capture — exactly 60 frames per second of application time.
 
-## Стенд и данные
+## Stand and data
 
-- [Видео] Данные в кадре — только придуманные, со стенда. Никаких живых проектов, переписки, имён и путей владельца. Перед записью пролистайте каждый экран глазами: на кадре с таким мусором ролик можно выбросить.
-- [3D] Снимайте только демо-стенд, где все ответы API подставляет заглушка с выдуманными данными, чтобы в кадр гарантированно не попало ничего с живой установки.
-- [Видео] Стенд должен быть согласован сам с собой. Если один экран показывает, что инструмент установлен и вошёл, то и другой экран, который читает тот же факт, должен сказать то же самое. Противоречие между двумя экранами зритель заметит раньше, чем автор.
+- [Видео] The data in the frame — only invented, from the stand. No live projects, correspondence, names and paths of the owner. Before recording, page through every screen with your eyes: on a frame with such litter the video can be thrown away.
+- [3D] Shoot only a demo stand where all API answers are supplied by a stub with invented data, so that nothing from a live installation is guaranteed to get into the frame.
+- [Видео] The stand must be consistent with itself. If one screen shows that the tool is installed and logged in, the other screen that reads the same fact must say the same thing. A contradiction between two screens the viewer will notice before the author.
 
-## Курсор
+## Cursor
 
-- [Видео] Курсор должен ехать к цели, а не мимо неё. Наведение перед кликом — на ту кнопку, которую нажмут. Задержка курсора на «Отказать» перед нажатием «Разрешить» читается как сомнение.
-- [3D] Курсор рисуйте на самой странице из тех же событий, что уходят в приложение: тогда клик попадает ровно туда, куда видит зритель, а положение курсора потом восстанавливается из кадров с точностью до пикселя.
+- [Видео] The cursor must go to the target, not past it. Hovering before a click — on the button that will be pressed. A cursor lingering on "Deny" before pressing "Allow" reads as doubt.
+- [3D] Draw the cursor on the page itself from the same events that go into the application: then the click lands exactly where the viewer sees, and the cursor position is later restored from the frames to pixel accuracy.
 
-## Метки и запасы [Видео]
+## Marks and margins [Видео]
 
-- Ставьте метки прямо во время записи («клик», «результат», «ответ пришёл»). Подписи и камеру вешайте на метки, а не на секунды. Тогда пересъёмка или ускорение дубля сдвигают всё вместе, и ничего не разъезжается.
-- Давайте запасы тишины в начале и в конце дубля (секунда-четыре без действий). Резать лишнее при монтаже легко; доснимать недостающий хвост — нет.
+- Put marks right during recording ("click", "result", "answer arrived"). Hang captions and the camera on marks, not on seconds. Then a reshoot or speeding up of a take shifts everything together, and nothing drifts apart.
+- Give margins of silence at the start and at the end of a take (a second to four without actions). Cutting the excess in editing is easy; shooting the missing tail afterward is not.
 
-Для версии на другом языке длина вступления и хвоста должна совпадать с оригиналом [3D] — см. `languages-and-sync.md`.
+For a version in another language the length of the intro and the tail must match the original [3D] — see `languages-and-sync.md`.
 
-## Проверка дубля [Видео]
+## Checking a take [Видео]
 
-- Каждый дубль после записи смотрите листом кадров (сетка из 4–6 кадров). Проверяйте: действие дошло до результата, тост или новая строка появились, ничего не обрезано, чужих данных нет.
+- Look at every take after recording with a sheet of frames (a grid of 4–6 frames). Check: the action reached the result, the toast or the new row appeared, nothing is cropped, no other people's data.
 
-## Рекордер [Видео]
+## Recorder [Видео]
 
-- Рекордер не должен ждать бесконечно. Любое ожидание — с таймаутом. Ввод, который браузер подтвердит позже одного кадра, переносите на следующий кадр, а не держите часы.
-- Фоновые процессы гасите по pid. Ожидание «пока жив процесс X» через поиск по командной строке находит само себя и не кончается никогда. Лучше ждать файл-результат или код выхода.
+- The recorder must not wait endlessly. Any wait — with a timeout. Input that the browser will confirm later than one frame, move to the next frame, and do not hold the clock.
+- Kill background processes by pid. A wait "while process X is alive" through a search by command line finds itself and never ends. Better to wait for a result file or an exit code.

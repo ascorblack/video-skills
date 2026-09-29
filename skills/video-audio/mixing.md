@@ -1,30 +1,30 @@
-# Сведение голоса и музыки
+# Mixing voice and music
 
-## Уровень музыки под голосом
+## Music level under the voice
 
-- [Звук] Музыку под голос держите на 16–20 дБ тише речи. Громкость речи меряйте только на участках, где звучат фразы, иначе паузы занизят её уровень.
-- [Звук] Проверяйте разборчивость: в полосе речи 300–3400 Гц голос во время фраз должен быть заметно громче музыки, ориентир — 20 дБ.
-- [Видео] Музыка — под голосом, на заданное число LU ниже. Мерьте громкость (EBU R128, integrated) обеих дорожек так, как они звучат в миксе; голос при этом не трогайте. Проверьте, что в сумме нет клиппинга (пик ниже 0 dBFS).
-- [3D] Сведённое соотношение голоса и музыки — 18–20 дБ.
-- [Научпоп] Музыку держите на −20 LUFS и приглушайте под фразами на 15 дБ (вниз за 0,25 с, начиная за 0,35 с до фразы, обратно за 0,45 с после неё): так музыка оказывается примерно на 19 дБ ниже голоса, а переходы не слышны как «насос».
+- [Звук] Keep the music under the voice 16–20 dB quieter than the speech. Measure the loudness of speech only on the sections where phrases sound, otherwise the pauses will lower its level.
+- [Звук] Check intelligibility: in the speech band 300–3400 Hz the voice during phrases must be noticeably louder than the music, the reference point is 20 dB.
+- [Видео] Music — under the voice, a set number of LU lower. Measure the loudness (EBU R128, integrated) of both tracks as they sound in the mix; do not touch the voice meanwhile. Check that there is no clipping in the sum (peak below 0 dBFS).
+- [3D] The mixed ratio of voice to music — 18–20 dB.
+- [Научпоп] Keep the music at −20 LUFS and duck it under phrases by 15 dB (down over 0.25 s, starting 0.35 s before the phrase, back up over 0.45 s after it): this puts the music about 19 dB below the voice, and the transitions are not heard as "pumping".
 
-Ориентиры источников: 16–20 дБ [Звук], 18–20 дБ [3D], около 19 дБ [Научпоп], «заданное число LU» [Видео].
+Reference points of the sources: 16–20 dB [Звук], 18–20 dB [3D], about 19 dB [Научпоп], "a set number of LU" [Видео].
 
-## Громкость всего микса
+## Loudness of the whole mix
 
-- [Звук] Нормализуйте по громкости (LUFS), а не по пику. Одинаковая громкость у вариантов нужна, чтобы их честно сравнить на слух.
-- [3D] Громкость выравнивайте статическим усилением всего микса до −16 LUFS с лимитером, а не нормализацией по дорожкам, чтобы сведённое соотношение голоса и музыки не сбилось.
-- [Научпоп] Голос вместе с помехами выводите на −16 LUFS одним усилением, а громкость меряйте только на участках с фразами: паузы с шумом занижают замер.
+- [Звук] Normalize by loudness (LUFS), not by peak. Equal loudness of the variants is needed to compare them fairly by ear.
+- [3D] Level the loudness with a static gain of the whole mix to −16 LUFS with a limiter, not by normalizing per track, so that the mixed ratio of voice to music does not go off.
+- [Научпоп] Bring the voice together with the interference to −16 LUFS with a single gain, and measure loudness only on the sections with phrases: pauses with noise lower the measurement.
 
-## Пики и кодирование [Звук]
+## Peaks and encoding [Звук]
 
-- **Пики ограничивайте явно.** Если просят «чтобы пики не пугали», уменьшите скачок от фона к дропу и поставьте лимитер с потолком. Потолок проверяйте по истинному пику уже закодированного файла.
-- **Кодирование с потерями поднимает пики.** Острые щелчки после кодирования дают выброс до 2–3 дБ выше пика исходника. Меряйте истинный пик готового файла и при необходимости перекодируйте с поправкой.
-- Служебная тишина кодировщика удлиняет файл на десятки миллисекунд. Если длина должна быть «не больше N», обрежьте исходник чуть раньше.
+- **Limit peaks explicitly.** If they ask "so that the peaks do not scare", reduce the jump from the background to the drop and put a limiter with a ceiling. Check the ceiling by the true peak of the already encoded file.
+- **Lossy encoding raises peaks.** Sharp clicks after encoding give an overshoot of up to 2–3 dB above the peak of the source. Measure the true peak of the finished file and if needed re-encode with a correction.
+- The encoder's service silence lengthens the file by tens of milliseconds. If the length must be "no more than N", trim the source slightly earlier.
 
-## Финал ролика
+## The end of the video
 
-- [Видео] Музыку длиннее ролика обрезайте с затуханием в конце.
-- [Научпоп] В финале уводите музыку вместе с затемнением картинки, а помехи оставляйте до последних 0,25 с: шум, пропавший раньше кадра, звучит как выключенный звук, а короткое затухание нужно, чтобы файл не кончался щелчком.
+- [Видео] Trim music longer than the video with a fade at the end.
+- [Научпоп] In the finale fade the music out together with the darkening of the picture, and leave the interference until the last 0.25 s: noise that vanished before the frame sounds like switched-off sound, and a short fade is needed so the file does not end with a click.
 
-Вшивание звука в готовое видео — навык `video-render`, файл `mux-and-delivery.md`.
+Muxing the sound into the finished video — the `video-render` skill, file `mux-and-delivery.md`.

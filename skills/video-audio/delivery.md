@@ -1,13 +1,13 @@
-# Сдача звука, ключи и траты [Звук]
+# Delivering the sound, keys and spending [Звук]
 
-## Как сдавать звук
+## How to deliver the sound
 
-- Прикладывайте файл, адрес для прослушивания и замеры: длительность, громкость, пик, таймкоды событий.
-- Честно пишите, если не слушали сами и опирались только на замеры.
-- Прежние версии не удаляйте и не заменяйте: каждая новая версия — новый файл.
+- Attach the file, an address for listening and the measurements: duration, loudness, peak, timecodes of events.
+- Write honestly if you did not listen yourself and relied only on measurements.
+- Do not delete or replace earlier versions: every new version is a new file.
 
-## Ключи и траты на генерацию
+## Keys and spending on generation
 
-- Ключ читайте только в процесс, который вызывает API. Никогда не печатайте его, не пишите в логи, файлы и отчёты. Проверяйте результаты поиском по характерному префиксу ключа.
-- Считайте траты по учёту, а не по памяти: другие люди могли пользоваться тем же ключом. Потолок бюджета должен проверяться в коде до каждой генерации.
-- Файл с ключами должен быть исключён из системы контроля версий. Проверяйте это, а не верьте на слово.
+- Read the key only into the process that calls the API. Never print it, do not write it into logs, files and reports. Check the results by searching for the characteristic prefix of the key.
+- Count the spending by the accounting, not from memory: other people could have used the same key. The budget ceiling must be checked in code before each generation.
+- The file with keys must be excluded from version control. Check this, do not take it on trust.

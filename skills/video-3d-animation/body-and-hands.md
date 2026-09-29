@@ -1,40 +1,40 @@
-# Руки и тело от первого лица, контакт с предметами
+# First-person hands and body, contact with objects
 
-## Рукав, манжета, запястье [3D]
+## Sleeve, cuff, wrist [3D]
 
-- Рукав предплечья делайте гнущейся трубой: кривая Безье от локтя по оси предплечья к манжете по оси кисти, пересобирается каждый кадр. Прямой цилиндр при сгибе кисти отходит от манжеты, и в щели видна кожа.
-- Манжету держите строго по оси кисти: у модели кисти ниже шарнира есть около 6 см «запястья», и при наклоне манжеты к предплечью на 15–25° оно выходит сквозь её стенку на 2–4 см.
-- Сгиб запястья ограничивайте 45–50°, направляя тыкающий палец наполовину вдоль руки, а не перпендикулярно экрану: при 85–118° никакой рукав не выглядит правдоподобно.
+- Make the forearm sleeve a bending tube: a Bézier curve from the elbow along the forearm axis to the cuff along the hand axis, rebuilt every frame. A straight cylinder, when the hand bends, pulls away from the cuff, and skin is visible in the gap.
+- Hold the cuff strictly along the hand axis: the hand model below the joint has about 6 cm of "wrist", and if the cuff is tilted to the forearm by 15–25° it comes out through its wall by 2–4 cm.
+- Limit the bend of the wrist to 45–50°, directing the poking finger halfway along the arm, not perpendicular to the screen: at 85–118° no sleeve looks plausible.
 
-## Длина руки и близкие экраны [3D]
+## Arm length and close screens [3D]
 
-- Плечо не отрывайте от тела: если цель дальше длины руки, выдвигайте плечо вперёд не больше чем на 12 см («наклон корпуса») и подтягивайте саму цель. Растяжение руки больше 3–5 % зритель видит как висящую кисть.
-- Близкий экран (телефон, планшет) держите не ближе 35 см от глаз и ниже линии взгляда: на 22 см предплечье перечёркивает кадр наискось, а ближняя плоскость камеры срезает рукав и показывает его изнутри.
-- [Научпоп] Руки от первого лица ставьте в системе тела, которая поворачивается только по курсу, а не вместе с наклоном головы: иначе при взгляде вниз руки уезжают вслед за камерой.
+- Do not tear the shoulder off the body: if the target is farther than the arm's length, move the shoulder forward by no more than 12 cm (a "torso lean") and pull in the target itself. Arm stretch of more than 3–5 % the viewer sees as a hanging hand.
+- Keep a close screen (phone, tablet) no closer than 35 cm from the eyes and below the line of sight: at 22 cm the forearm strikes diagonally across the frame, and the camera's near plane cuts the sleeve and shows it from inside.
+- [Научпоп] Place first-person hands in a body system that turns only by heading, not together with the tilt of the head: otherwise, when looking down, the hands drift after the camera.
 
-## Тело в сцене [3D]
+## Body in the scene [3D]
 
-- Руки, торс, ноги и обувь держите в сцене постоянно, а не включайте их, когда камера смотрит вниз, иначе тело появляется за один кадр.
+- Keep the hands, torso, legs and shoes in the scene permanently, and do not switch them on when the camera looks down, otherwise the body appears in a single frame.
 
-## Контакт с поверхностями и устройствами
+## Contact with surfaces and devices
 
-- [3D] Кисть на мыши, клавиатуре или столе поднимайте ровно настолько, чтобы нижний кончик пальца лёг на поверхность, иначе пальцы уходят в столешницу примерно на 4 см; ход клавиши при нажатии — 2–4 мм.
-- [3D] Путь руки к устройству и обратно стройте дугой (к устройству сначала вверх, потом вперёд, обратно — наоборот): линейная интерполяция из опущенной руки режет край столешницы.
-- [Научпоп] Ноги фигуры опускайте на 0–6 мм ниже поверхности, а не выше: даже миллиметровый зазор над полом или ладонью зритель видит как парение.
+- [3D] Raise the hand on a mouse, keyboard or table exactly enough for the lower fingertip to lie on the surface, otherwise the fingers go into the tabletop by about 4 cm; key travel on a press — 2–4 mm.
+- [3D] Build the path of the hand to the device and back as an arc (to the device first up, then forward, back — the opposite): linear interpolation from a lowered hand cuts the edge of the tabletop.
+- [Научпоп] Lower the figure's feet 0–6 mm below the surface, not above: even a millimeter gap over the floor or a palm the viewer sees as hovering.
 
-## Персонажи и мебель [3D]
+## Characters and furniture [3D]
 
-- Персонажа у экрана ставьте так, чтобы до стекла оставалось 1–4 см от его задней грани, считая по реальной глубине головы (у нас 18 см), а не по центру модели, иначе экран проходит через середину тела.
-- Прыжок на мебель и с неё разбивайте на вертикальную и горизонтальную кривые со сдвигом 0,15–0,25 с, иначе при одной общей кривой персонаж проходит сквозь стенку тумбы или стекло киоска.
+- Place a character at a screen so that 1–4 cm to the glass remain from its back face, counting by the real depth of the head (ours is 18 cm), not by the center of the model, otherwise the screen passes through the middle of the body.
+- Break a jump onto furniture and off it into a vertical and a horizontal curve with a shift of 0.15–0.25 s, otherwise with one common curve the character passes through the wall of the cabinet or the glass of the kiosk.
 
-## Предмет в руке
+## Object in the hand
 
-- [3D] Предмет в руке персонажа держите через решение контакта: после позы сдвигайте всего персонажа так, чтобы варежка легла на целевую точку, иначе «держит» только на глаз, а на деле висит в сантиметрах от предмета.
-- [Научпоп] Предмет, который фигура держит, крепите к кисти, а не к корпусу: при отдельной анимации рук и предмета руки его не касаются, и он «висит в воздухе».
-- [Научпоп] Когда руки должны дотянуться до предмета, ставьте кисть в точку хвата и считайте локоть от плеча: руки с заданными углами промахиваются мимо предмета при любом изменении позы.
-- [Научпоп] Предмет, переходящий из одной опоры в другую (со стола в руки), плавно ведите между двумя точками крепления за 0,3–0,35 с с подъёмом на несколько сантиметров: мгновенная смена опоры выглядит как телепортация.
-- [Научпоп] Фигуре на нити или стержне давайте видимую опору на уровне рук или пояса: при нити у ног фигура выглядит стоящей на нити, а не держащейся за неё.
+- [3D] Hold an object in a character's hand through a contact solution: after the pose move the whole character so that the mitten lands on the target point, otherwise it "holds" only by eye, and in fact hangs centimeters from the object.
+- [Научпоп] Attach an object that the figure holds to the hand, not to the body: with separate animation of hands and object the hands do not touch it, and it "hangs in the air".
+- [Научпоп] When the hands must reach an object, put the hand at the grip point and compute the elbow from the shoulder: hands with set angles miss the object with any change of pose.
+- [Научпоп] An object passing from one support to another (from the table into the hands) lead smoothly between the two attachment points over 0.3–0.35 s with a lift of a few centimeters: an instant change of support looks like teleportation.
+- [Научпоп] Give a figure on a thread or a rod a visible support at the level of the hands or belt: with the thread at the feet the figure looks as standing on the thread, not holding on to it.
 
-## Скиннинг [3D]
+## Skinning [3D]
 
-- Вершины скиннингованной сетки берите только после `skeleton.update()`: без рендера матрицы костей отстают на кадр, и проверка выдаёт сотни ложных пересечений.
+- Take the vertices of a skinned mesh only after `skeleton.update()`: without a render the bone matrices lag by a frame, and the check gives hundreds of false intersections.

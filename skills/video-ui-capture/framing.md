@@ -1,29 +1,29 @@
-# Запись интерфейса в ролике
+# Interface recording in the video
 
-## Обрезка и ускорение
+## Trimming and speeding up
 
-- [Видео] Запись длиннее слайда — обрежьте окно, потом ускоряйте. Окно — от первого действия до видимого результата. Если окно всё равно длиннее, проигрывайте его равномерно быстрее, но не больше чем вдвое. Выкидывать клик или его результат нельзя.
-- [3D] Записи экранов показывайте целиком и до результата действия: зум в кнопки и стоп-кадр сразу после клика зритель замечает и не принимает.
-- [3D] Кадры записи режьте из RGB (`format=rgb24,crop=…`): в yuv420 ffmpeg округляет нечётный отступ до чётного, и у вырезанного экрана появляется белая строка по краю.
+- [Видео] A recording longer than the slide — trim the window, then speed up. The window — from the first action to the visible result. If the window is still longer, play it evenly faster, but no more than twofold. Throwing out a click or its result is not allowed.
+- [3D] Show screen recordings whole and up to the result of the action: a zoom into buttons and a freeze frame right after a click the viewer notices and does not accept.
+- [3D] Cut the recording frames from RGB (`format=rgb24,crop=…`): in yuv420 ffmpeg rounds an odd offset to an even one, and the cut-out screen gets a white line along the edge.
 
-## Наезды и подписи [Видео]
+## Push-ins and captions [Видео]
 
-- Наезд камеры — на целый блок интерфейса, а не на середину. Край кадра кладите на границу колонки или окна. Разрезанный пополам текст выглядит как брак. Форма, в которую что-то вводят, должна войти в кадр целиком, вместе с кнопкой.
-- В кадре — честная подпись об источнике: настоящее приложение, демо-данные.
+- A camera push-in — onto a whole block of the interface, not onto the middle. Lay the edge of the frame on the boundary of a column or window. Text cut in half looks like a defect. A form into which something is entered must come into the frame entirely, together with the button.
+- In the frame — an honest note on the source: the real application, demo data.
 
-## Экран программы в стилизованном кадре [Научпоп]
+## A program screen in a stylized frame [Научпоп]
 
-- Экран программы крупным планом снимайте строго фронтально, чтобы он занимал 85–90 % ширины кадра: под углом и мельче текст интерфейса перестаёт читаться.
-- Курсор ведите по ключевым точкам с плавным разгоном и торможением и дугой около 8 % длины перемещения: прямой равномерный ход выглядит механическим.
-- Надписи интерфейса берите из настоящей локализации программы: выдуманные подписи на знакомом зрителю экране режут глаз сильнее выдуманных данных.
-- Виньетка не темнее 80 % яркости в углах и мелкое зерно — чтобы не прятать кнопки в углах и не съедать мелкий текст (навык `video-design`, `retro-style.md`).
+- Shoot the program screen in close-up strictly head-on so that it occupies 85–90 % of the frame width: at an angle and smaller the interface text stops being readable.
+- Lead the cursor by key points with smooth acceleration and braking and an arc of about 8 % of the length of the movement: a straight even motion looks mechanical.
+- Take the interface captions from the program's real localization: invented captions on a screen familiar to the viewer jar the eye more than invented data.
+- Vignette no darker than 80 % brightness in the corners and fine grain — so as not to hide buttons in the corners and not to eat small text (the `video-design` skill, `retro-style.md`).
 
-## Где источники расходятся: настоящий или нарисованный интерфейс
+## Where the sources disagree: real or drawn interface
 
-- [Видео] — промо и презентации о программе: снимать только настоящий интерфейс, покадрово; не рисовать макеты интерфейса вместо записей — нарисованный экран всегда где-то врёт, и доверие к ролику падает целиком.
-- [Научпоп] — стилизованный ролик под учебное кино 70-х: интерфейс в кадре рисовали заново в разрешении ролика и в каждом кадре, потому что во вставленной записи экрана с частотой 12 кадров в секунду курсор «телепортируется», и зритель это замечает. Надписи при этом брали из настоящей локализации программы.
+- [Видео] — promos and presentations about a program: shoot only the real interface, frame by frame; do not draw interface mockups instead of recordings — a drawn screen always lies somewhere, and trust in the video falls as a whole.
+- [Научпоп] — a stylized video in the manner of 70s educational film: the interface in the frame was redrawn at the video's resolution and in every frame, because in an inserted screen recording at 12 frames per second the cursor "teleports", and the viewer notices this. The captions were taken from the program's real localization.
 
-## Где источники расходятся: как вести курсор
+## Where the sources disagree: how to lead the cursor
 
-- [3D] — записи, снятые покадрово с настоящего приложения: курсор рисуется на странице из тех же событий, что уходят в приложение.
-- [Научпоп] — нарисованный интерфейс: курсор ведётся по ключевым точкам с разгоном, торможением и дугой около 8 % длины перемещения.
+- [3D] — recordings shot frame by frame from the real application: the cursor is drawn on the page from the same events that go into the application.
+- [Научпоп] — a drawn interface: the cursor is led by key points with acceleration, braking and an arc of about 8 % of the length of the movement.

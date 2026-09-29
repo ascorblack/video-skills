@@ -1,22 +1,22 @@
-# Объяснения в кадре: термин + прикладной пример
+# Explanations in the frame: term + applied example
 
-## Термин и пример [Визуал]
+## Term and example [Визуал]
 
-Термины оставляйте: зрителю, который их знает, так быстрее. Но каждому термину нужен прикладной пример — конкретный случай, после которого ясно, что происходит на экране.
+Keep the terms: for a viewer who knows them it is quicker. But every term needs an applied example — a concrete case after which it is clear what is happening on the screen.
 
-- **Постоянная панель на каждом слайде в две строки:** «что происходит» — одно предложение простыми словами; «например» — конкретный сценарий. Место и размер панели одинаковые на всех слайдах, меняются только слова.
-- **Пример — это сцена с участником, действием и числом**, а не перефраз определения. Плохо: «ресурсы ограничены». Хорошо: «запрос "логи за сутки" вернул сотни килобайт — больше, чем модель может прочитать, и провайдер отвечает ошибкой».
-- **Переводите единицы в привычные:** токены — в примерное число слов, байты — в «лог за сутки», часы ожидания — в «инженер отвечает с телефона вечером».
-- **Показывайте, что сломалось бы без механизма.** Одна строка «наивный вариант» (повторный деплой, отказ провайдера) объясняет ценность лучше любой похвалы.
-- **Инфраструктурный жаргон заменяйте на то, что видит зритель:** «под» → «сервер», «ячейка» → «клетка». Идентификаторы и команды оставляйте как есть, это доказательство.
-- **Одна мысль на слайд.** Если для примера нужно два предложения про разное, это два слайда.
+- **A permanent two-line panel on every slide:** "what is happening" — one sentence in plain words; "for example" — a concrete scenario. The place and size of the panel are the same on all slides, only the words change.
+- **An example is a scene with a participant, an action and a number**, not a paraphrase of the definition. Bad: "resources are limited". Good: "the query "logs for a day" returned hundreds of kilobytes — more than the model can read, and the provider answers with an error".
+- **Convert units into familiar ones:** tokens — into an approximate number of words, bytes — into "a day's log", hours of waiting — into "the engineer replies from a phone in the evening".
+- **Show what would break without the mechanism.** One "naive variant" line (a repeated deploy, a provider failure) explains the value better than any praise.
+- **Replace infrastructure jargon with what the viewer sees:** "pod" → "server", "cell" → "square". Identifiers and commands leave as they are, that is the proof.
+- **One idea per slide.** If an example needs two sentences about different things, that is two slides.
 
-## Числа [Визуал]
+## Numbers [Визуал]
 
-- Числа — только проверенные командой, и в формулировке того, что реально проверено: «собрано N тестов», если тесты не запускались, а только собирались.
-- Устаревшие цифры из README не переносите в кадр, не сверив с кодом.
+- Numbers — only those verified by the team, and worded as what was actually verified: "N tests built" if the tests were not run but only built.
+- Do not carry outdated figures from the README into the frame without checking them against the code.
 
-## Один источник текста
+## One source of text
 
-- [Видео] Текст на экране и текст диктора — из одного источника. Заголовок и фраза под ним — это и есть то, что читается вслух. Файл для диктора генерируйте из того же списка, из которого собираются слайды, тогда они не разойдутся.
-- [Визуал] Перевод — из одного источника. Все строки хранятся парами «исходник → перевод», из них собираются и страница с переключателем языков, и видео на другом языке. Код, команды, идентификаторы не переводятся. Сверка смысла — таблицей по главам.
+- [Видео] On-screen text and the narrator's text — from one source. The title and the phrase under it are what is read aloud. Generate the narrator's file from the same list from which the slides are assembled, then they will not diverge.
+- [Визуал] Translation — from one source. All strings are kept in pairs "original → translation", and both the page with a language switcher and the video in the other language are assembled from them. Code, commands, identifiers are not translated. Checking of meaning — by a table per chapter.

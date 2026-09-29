@@ -1,48 +1,48 @@
-# Темп, переходы, камера
+# Pace, transitions, camera
 
-## Сколько держать слайд
+## How long to hold a slide
 
-- [Визуал] Время показа считайте, а не назначайте: **max(время анимации + 2–3 с; 2 с + слова ÷ скорость чтения)**. С картинкой рядом читают медленно, около 2,7 слова в секунду. Служебные ярлыки («например») в счёт не входят.
-- [Визуал] Если языков несколько, считайте по более медленному и держите один тайминг на все версии: раскадровка и звук тогда общие.
-- [Визуал] Не задавайте длину ролика раньше, чем посчитан текст. Жёсткие «90 секунд» при полноценных объяснениях дают слайды по две секунды, которые никто не успевает прочитать.
-- [Визуал] Анимация отыгрывает в первые секунды слайда, дальше кадр стоит спокойно и даёт дочитать.
-- [Видео] Время задаёт голос. Слайд начинается чуть раньше своей фразы (0,5–0,7 с) и уходит через 1–1,5 с после её конца. Дольше — зритель ждёт; раньше — фраза обрывается на чужой картинке.
-- [Видео] Если нет голоса, считайте чтение: слайд не короче «слова / 2,4 + 2» секунд.
-- [Научпоп] После каждой фразы держите кадр ещё 2 секунды до смены, иначе зритель не успевает дочитать то, о чём только что сказали.
-- [Научпоп] Название главы ставьте маленькой плашкой в нижнем углу на 3–4 секунды: крупная надпись закрывает сам предмет показа, а в учебном кино главное — показ.
+- [Визуал] Count the display time, do not assign it: **max(animation time + 2–3 s; 2 s + words ÷ reading speed)**. With a picture alongside, people read slowly, about 2.7 words per second. Service tags ("for example") do not count.
+- [Визуал] If there are several languages, count by the slower one and keep one timing for all versions: the storyboard and sound are then shared.
+- [Визуал] Do not set the length of the video before the text has been counted. A rigid "90 seconds" with full explanations gives two-second slides that nobody has time to read.
+- [Визуал] The animation plays out in the first seconds of the slide, after that the frame stands calmly and lets it be read to the end.
+- [Видео] The voice sets the time. A slide starts slightly before its phrase (0.5–0.7 s) and leaves 1–1.5 s after its end. Longer — the viewer waits; earlier — the phrase is cut off over someone else's picture.
+- [Видео] If there is no voice, count the reading: a slide is no shorter than "words / 2.4 + 2" seconds.
+- [Научпоп] After each phrase hold the frame another 2 seconds before changing, otherwise the viewer does not have time to finish reading what was just said.
+- [Научпоп] Put the chapter title as a small plate in the bottom corner for 3–4 seconds: a large caption covers the very subject of the showing, and in educational film the main thing is the showing.
 
-### Где источники расходятся
+### Where the sources disagree
 
-- **Удержание после конца фразы.** [Видео]: 1–1,5 с, в промо о программе, — дольше зритель ждёт. [Научпоп]: 2 с, в ролике-научпопе, — иначе зритель не успевает дочитать сказанное.
-- **Скорость чтения в формуле.** [Видео]: «слова / 2,4 + 2» с — для слайда без голоса. [Визуал]: «2 с + слова ÷ 2,7» (и не меньше анимации + 2–3 с) — для схемных кадров, где рядом картинка.
+- **Hold after the end of the phrase.** [Видео]: 1–1.5 s, in a promo about a program — longer and the viewer waits. [Научпоп]: 2 s, in a popular-science video — otherwise the viewer does not have time to finish reading what was said.
+- **Reading speed in the formula.** [Видео]: "words / 2.4 + 2" s — for a slide without voice. [Визуал]: "2 s + words ÷ 2.7" (and not less than animation + 2–3 s) — for schematic frames, where there is a picture alongside.
 
-## Переходы
+## Transitions
 
-- [Видео] Один переход на весь ролик: новый слайд проявляется поверх старого за полсекунды. Разные эффекты на каждом слайде отвлекают от содержания.
-- [Визуал] На стыках никакого масштабирования: только растворение (0,5–0,8 с). Жёсткая склейка допустима как смысловой приём, но зритель воспринимает её как рывок; по умолчанию — растворение.
-- [Научпоп] Главы соединяйте наплывом 0,5–1 с после удержания, а не ирисом в каждой главе: повторяющийся ирис быстро становится назойливым.
-- [Научпоп] Склейки внутри главы ставьте в паузы речи диктора: склейка на середине фразы режет слово и сразу заметна. Как искать паузы — в навыке `video-audio`, файл `voiceover.md`.
+- [Видео] One transition for the whole video: the new slide appears over the old one in half a second. Different effects on each slide distract from the content.
+- [Визуал] No scaling at the joins: only a dissolve (0.5–0.8 s). A hard cut is acceptable as a semantic device, but the viewer perceives it as a jerk; by default — a dissolve.
+- [Научпоп] Connect chapters with a cross-dissolve of 0.5–1 s after the hold, not with an iris in every chapter: a repeating iris quickly becomes obtrusive.
+- [Научпоп] Put cuts within a chapter into the pauses of the narrator's speech: a cut in the middle of a phrase cuts a word and is noticeable at once. How to find pauses — in the `video-audio` skill, file `voiceover.md`.
 
-Длительность растворения у источников разная: полсекунды [Видео], 0,5–0,8 с [Визуал], 0,5–1 с между главами [Научпоп].
+The duration of the dissolve differs between sources: half a second [Видео], 0.5–0.8 s [Визуал], 0.5–1 s between chapters [Научпоп].
 
-## Переход без дёрганья [Визуал]
+## A transition without jerking [Визуал]
 
-Зритель видит скачок, когда между соседними кадрами меняется то, что должно было остаться на месте. Частые причины:
+The viewer sees a jump when something that should have stayed in place changes between neighboring frames. Frequent causes:
 
-1. **Разный масштаб камеры у соседних шотов.** Лёгкий «дрейф» или наезд в начале каждого шота даёт на стыке заметный прыжок масштаба.
-2. **Общие элементы стоят в разных местах.** Сетка, панель, заголовок, блок-«сервер» в соседних кадрах должны иметь одинаковые координаты и размер. Если композиция главы меняется, меняйте её внутри шота движением, а не на стыке.
-3. **Данные перерисовываются с нуля.** Следующий шот должен начинаться с конечного состояния предыдущего: не опустошайте сетку, чтобы тут же залить её заново.
-4. **Причина и следствие в обратном порядке.** Если удар, штамп или команда что-то меняет, изменение должно происходить после удара, в том же шоте. Иначе на растворении зритель видит, что эффект случился раньше причины.
-5. **Жёсткая склейка там, где её не просили.**
-6. **Постоянные блоки разного размера.** Панель, у которой высота зависит от длины текста, «дышит» на каждом стыке. Фиксируйте высоту.
+1. **Different camera scale in neighboring shots.** A light "drift" or push-in at the start of each shot gives a noticeable scale jump at the join.
+2. **Shared elements stand in different places.** The grid, panel, title, the "server" block in neighboring frames must have the same coordinates and size. If the composition of a chapter changes, change it inside the shot by motion, not at the join.
+3. **Data is redrawn from scratch.** The next shot must start from the final state of the previous one: do not empty the grid only to fill it anew at once.
+4. **Cause and effect in reverse order.** If a hit, a stamp or a command changes something, the change must happen after the hit, in the same shot. Otherwise at the dissolve the viewer sees that the effect happened before the cause.
+5. **A hard cut where none was asked for.**
+6. **Permanent blocks of different size.** A panel whose height depends on the length of the text "breathes" at every join. Fix the height.
 
-### Как проверять стыки [Визуал]
+### How to check joins [Визуал]
 
-- Для каждого стыка снимайте три кадра: конец шота, середину растворения, начало следующего. Смотрите пары рядом: всё, что не участвует в смысловом изменении, должно совпадать пиксель в пиксель.
-- Отдельно смотрите кадры посреди движения, а не только конечные: застрявший на полпути объект виден только там.
+- For each join take three frames: the end of the shot, the middle of the dissolve, the start of the next. Look at the pairs side by side: everything that does not take part in the semantic change must match pixel for pixel.
+- Look separately at frames in the middle of motion, not only the final ones: an object stuck halfway is visible only there.
 
-## Камера
+## Camera
 
-- [Видео] Наезд камеры — на целый блок интерфейса, а не на середину. Край кадра кладите на границу колонки или окна. Разрезанный пополам текст выглядит как брак. Форма, в которую что-то вводят, должна войти в кадр целиком, вместе с кнопкой.
-- [3D] Записи экранов показывайте целиком и до результата действия: зум в кнопки и стоп-кадр сразу после клика зритель замечает и не принимает.
-- [Научпоп] Камеру не трясите и кадр не покачивайте: тряска мешает читать экраны, в учебном кино камера стоит на штативе, и тряску из первого варианта пришлось убирать по просьбе.
+- [Видео] A camera push-in — onto a whole block of the interface, not onto the middle. Lay the edge of the frame on the boundary of a column or window. Text cut in half looks like a defect. A form into which something is entered must come into the frame entirely, together with the button.
+- [3D] Show screen recordings whole and up to the result of the action: a zoom into buttons and a freeze frame right after a click the viewer notices and does not accept.
+- [Научпоп] Do not shake the camera and do not sway the frame: shake hinders reading the screens, in educational film the camera stands on a tripod, and the shake from the first version had to be removed on request.

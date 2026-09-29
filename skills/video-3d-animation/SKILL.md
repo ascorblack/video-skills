@@ -1,35 +1,35 @@
 ---
 name: video-3d-animation
-description: Правила 3D-анимации для роликов в браузере (three.js → покадровый рендер) и анимации фигур с предметами — руки и тело от первого лица, рукав и манжета, контакт кисти с предметами и поверхностями, смешивание поз и углов, расталкивание персонажей, ходьба без скольжения, свечение, контактные тени, процедурные материалы, детекторы пересечений и рывков. Используй, когда строишь, анимируешь или проверяешь 3D-сцену, персонажей, руки, предметы в руках или свет в ролике.
+description: Rules of 3D animation for videos in the browser (three.js → frame-by-frame render) and for animating figures with objects — first-person hands and body, sleeve and cuff, contact of the hand with objects and surfaces, blending poses and angles, pushing characters apart, walking without sliding, glow, contact shadows, procedural materials, detectors of intersections and jerks. Use when building, animating or checking a 3D scene, characters, hands, objects in hands or light in a video.
 ---
 
-# 3D-анимация
+# 3D animation
 
-Каждое правило взято из уроков прошлых роликов; в квадратных скобках — источник (легенда внизу).
+Every rule is taken from the lessons of past videos; the source is in square brackets (legend at the bottom).
 
-## Короткие правила
+## Short rules
 
-1. Руки, торс, ноги и обувь держите в сцене постоянно, а не включайте их, когда камера смотрит вниз. [3D]
-2. Любую смену позы делайте весом со смешиванием за 0,25–0,6 с, а не переключателем `if (t > a)`. [3D]
-3. Углы смешивайте только коротким путём (`lerpAng`). [3D]
-4. Следующий блок анимации начинайте с позиции, где закончил предыдущий, а не с точки пути. [3D]
-5. Предмет в руке держите через контакт: сдвигайте персонажа так, чтобы кисть легла на точку [3D]; предмет крепите к кисти, а не к корпусу [Научпоп].
-6. Ноги опускайте на 0–6 мм ниже поверхности, а не выше [Научпоп]; кисть на поверхности поднимайте ровно до кончика пальца [3D].
-7. Шаг ног берите из пройденного расстояния, а не из времени. [Научпоп]
-8. При многопроцессном рендере сглаживайте позы запечённо, заранее, и отдавайте странице готовые поправки. [3D]
-9. Контактные тени дают больше всего «приземлённости» за минимальную цену. [3D]
-10. Детекторы пересечений и рывков гоняйте до полного рендера, но полноразмерные кадры в моментах действий всё равно смотрите глазами. [3D]
+1. Keep the hands, torso, legs and shoes in the scene permanently, and do not switch them on when the camera looks down. [3D]
+2. Make any change of pose by weight with blending over 0.25–0.6 s, not with an `if (t > a)` switch. [3D]
+3. Blend angles only by the short path (`lerpAng`). [3D]
+4. Start the next animation block from the position where the previous one ended, not from a point of the path. [3D]
+5. Hold an object in the hand through contact: move the character so that the hand lands on the point [3D]; attach the object to the hand, not to the body [Научпоп].
+6. Lower the feet 0–6 mm below the surface, not above [Научпоп]; raise the hand on a surface exactly to the fingertip [3D].
+7. Take the step of the legs from the distance traveled, not from time. [Научпоп]
+8. In a multi-process render smooth the poses baked, in advance, and give the page the ready corrections. [3D]
+9. Contact shadows give the most "groundedness" for the minimum price. [3D]
+10. Run the detectors of intersections and jerks before the full render, but still look at full-size frames at the moments of actions with your eyes. [3D]
 
-## Подробности
+## Details
 
-- `body-and-hands.md` — руки и тело от первого лица, рукав и манжета, контакт с поверхностями и мебелью.
-- `motion.md` — смешивание поз и углов, блоки анимации, расталкивание, «жизнь» между репликами, фигуры и предметы.
-- `materials-and-light.md` — свечение, тени, дерево, скругления, экраны, шрифты, луч прожектора.
-- `frame-checks.md` — детекторы пересечений и рывков, что они не видят.
+- `body-and-hands.md` — first-person hands and body, sleeve and cuff, contact with surfaces and furniture.
+- `motion.md` — blending poses and angles, animation blocks, pushing apart, "life" between remarks, figures and objects.
+- `materials-and-light.md` — glow, shadows, wood, rounding, screens, fonts, spotlight beam.
+- `frame-checks.md` — detectors of intersections and jerks, what they do not see.
 
-Рендер и его ускорение — навык `video-render`; синхронизация рук в сцене с записью интерфейса — навык `video-ui-capture`.
+Rendering and speeding it up — the `video-render` skill; synchronizing the hands in the scene with an interface recording — the `video-ui-capture` skill.
 
-## Источники
+## Sources
 
-- [3D] — уроки трёхмерного ролика от первого лица в браузере (three.js → покадровый рендер).
-- [Научпоп] — уроки ролика в стилистике советского научпопа и диафильма начала 70-х (анимация плоских фигур и предметов).
+- [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
+- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips (animation of flat figures and objects).

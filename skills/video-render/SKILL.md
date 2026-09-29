@@ -1,36 +1,36 @@
 ---
 name: video-render
-description: Правила рендера и оптимизации роликов из HTML/браузерных кадров — грабли покадрового рендера с перемоткой (твины, CSS-анимации, transform, aspect-ratio, SVG use, тяжёлые слои), детерминизм и повторяемость, где уходит время рендера, кодирование на NVENC с битрейтом, воркеры, отвязанный от сессии рендер, вшивание звука без перерендера картинки, проверка готового файла (ffprobe) и хранение версий. Используй, когда рендеришь, ускоряешь, кодируешь, пересобираешь или сдаёшь готовое видео.
+description: Rules for rendering and optimizing videos made of HTML/browser frames — pitfalls of frame-by-frame rendering with seeking (tweens, CSS animations, transform, aspect-ratio, SVG use, heavy layers), determinism and repeatability, where render time goes, encoding on NVENC with a bitrate, workers, a render detached from the session, muxing in the sound without re-rendering the picture, checking the finished file (ffprobe) and keeping versions. Use when rendering, speeding up, encoding, reassembling or delivering a finished video.
 ---
 
-# Рендер и оптимизация
+# Rendering and optimization
 
-Каждое правило взято из уроков прошлых роликов; в квадратных скобках — источник (легенда внизу).
-Где источники расходятся, приведены оба совета с пометкой, к какому случаю каждый.
+Every rule is taken from the lessons of past videos; the source is in square brackets (legend at the bottom).
+Where the sources disagree, both pieces of advice are given, with a note on which case each applies to.
 
-## Короткие правила
+## Short rules
 
-1. Рендер берёт кадр по времени, а не проигрывает анимацию подряд: одно свойство — одна анимация, пульсации — твинами, а не `@keyframes`. [Визуал]
-2. Внешние скрипты и шрифты кладите в проект, а не тяните во время рендера. [Визуал] [Научпоп]
-3. Шум зерна вычисляйте из номера кадра, а не из случайного генератора [Научпоп]; последовательность случайных чисел генератора сохраняйте и проверяйте, что прежние версии пересобираются побайтно так же [Звук].
-4. Прежде чем ускорять, проверьте, куда уходит время. [3D]
-5. Кодирование — на NVENC вместе с ограничением битрейта; качество кодека сравнивайте по PSNR на одном куске. [3D]
-6. Рендер запускайте отвязанным от сессии; две версии — последовательно, а не одновременно на одну видеокарту. [3D]
-7. После переноса на машину рендера сверяйте контрольные суммы файлов. [3D]
-8. Картинку и звук держите отдельно: звук вшивайте копированием видеопотока, без перекодирования картинки. [Видео] [Визуал] [3D]
-9. Перед сдачей — ffprobe и проверка, что страница отдаёт именно новый файл. [Видео]
-10. Прежние версии не удаляйте. [Видео] [Звук]
+1. The render takes a frame by time, and does not play the animation through: one property — one animation, pulsations — by tweens, not `@keyframes`. [Визуал]
+2. Put external scripts and fonts into the project, and do not pull them during the render. [Визуал] [Научпоп]
+3. Compute the grain noise from the frame number, not from a random generator [Научпоп]; preserve the generator's sequence of random numbers and check that earlier versions reassemble byte for byte the same [Звук].
+4. Before speeding up, check where the time goes. [3D]
+5. Encoding — on NVENC together with a bitrate limit; compare the codec's quality by PSNR on one piece. [3D]
+6. Launch the render detached from the session; two versions — sequentially, not simultaneously onto one video card. [3D]
+7. After moving to the render machine, compare the checksums of the files. [3D]
+8. Keep the picture and the sound separate: mux the sound in by copying the video stream, without re-encoding the picture. [Видео] [Визуал] [3D]
+9. Before delivery — ffprobe and a check that the page serves exactly the new file. [Видео]
+10. Do not delete earlier versions. [Видео] [Звук]
 
-## Подробности
+## Details
 
-- `seek-render.md` — грабли покадрового рендера с перемоткой, детерминизм.
-- `performance.md` — где уходит время, кодирование, воркеры, запуск рендера.
-- `mux-and-delivery.md` — вшивание звука, проверка готового файла, версии.
+- `seek-render.md` — pitfalls of frame-by-frame rendering with seeking, determinism.
+- `performance.md` — where the time goes, encoding, workers, launching the render.
+- `mux-and-delivery.md` — muxing in the sound, checking the finished file, versions.
 
-## Источники
+## Sources
 
-- [Звук] — архивные уроки по звуку и озвучке промо-роликов и презентаций.
-- [Видео] — архивные уроки по видео: записи интерфейса, темп, переходы.
-- [Визуал] — архивные уроки по визуалу промо-роликов из схемных кадров (HTML-кадры → покадровый рендер с перемоткой).
-- [3D] — уроки трёхмерного ролика от первого лица в браузере (three.js → покадровый рендер).
-- [Научпоп] — уроки ролика в стилистике советского научпопа и диафильма начала 70-х.
+- [Звук] — archive lessons on sound and voiceover of promo videos and presentations.
+- [Видео] — archive lessons on video: interface recordings, pace, transitions.
+- [Визуал] — archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render with seeking).
+- [3D] — lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render).
+- [Научпоп] — lessons of a video in the style of Soviet popular science and early-70s filmstrips.
