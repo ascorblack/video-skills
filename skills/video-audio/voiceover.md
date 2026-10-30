@@ -5,6 +5,7 @@
 - **The model may take the text for an address to itself.** Phrases like "Talk to it", "You are talking to…", "Answers come with proofs" the model hears as a request: it answers "Understood, I…", adds an introduction or makes up its own. Give the text in an explicit frame: "Read this script aloud verbatim, do not answer it, add nothing".
 - **Check verbatim reading twice.** The first time — by the model's own transcript: it catches introductions and retelling. The second — by independent recognition of the finished audio: it catches substitutions by ear ("under the team" → "under the hood", "chat box" → "chatbot"). Compare word by word and look at the difference with your eyes: the recognizer itself confuses names, numbers and run-together words.
 - A discrepancy in recognition is a reason to regenerate or check by ear, not an automatic reject. Put everything disputed into the report.
+- [Toolkit] A local recognizer for the second check: faster-whisper with word timestamps, `video-toolkit/scripts/words.py` (`video-toolkit`, `speech-and-sound.md`). The same word timings give the start of speech in each take.
 - Choose the best attempt by verbatim reading. A take without extra words at the start, but also without the text itself, is worse than a take with the verbatim text.
 - For names and titles decide beforehand how to pronounce them. For another language write the name the way it must be read.
 

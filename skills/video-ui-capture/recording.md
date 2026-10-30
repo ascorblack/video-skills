@@ -5,6 +5,11 @@
 - [Video] Shoot only the real interface, frame by frame. The browser is driven by virtual time: advanced a frame, took a frame. Then 60 fps are honest under any load of the machine, and a repeated take matches the previous one frame for frame. A real-time screen recording tears frames and "drifts".
 - [3D] Shoot the interface frame by frame in headless Chrome in a deterministic mode (`beginFrame` and virtual time of 1/60 s per frame): a 2560×1440 screencast gives about 23 fps with gaps, and frame-by-frame capture — exactly 60 frames per second of application time.
 
+### Where the sources disagree: OBS
+
+- [Video] [3D]: a real-time screen recording tears frames and drifts; a browser interface is shot frame by frame in virtual time.
+- [Toolkit]: OBS Studio for demonstrating real software. Both hold, for different subjects: OBS only for what cannot be put on virtual time — a native desktop program, a game, a device, a webcam. Then record at a constant frame rate equal to the video's, at the final resolution or higher, at high quality (CQP/CRF about 16–18), into MKV or hybrid MP4 so a crash does not lose the file; hide notifications and the owner's data as for the stand; insert the footage into the frame-by-frame render as a video file.
+
 ## Stand and data
 
 - [Video] The data in the frame — only invented, from the stand. No live projects, correspondence, names and paths of the owner. Before recording, page through every screen with your eyes: on a frame with such litter the video can be thrown away.

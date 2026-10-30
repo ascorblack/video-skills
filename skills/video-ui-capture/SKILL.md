@@ -10,7 +10,7 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 
 ## Short rules
 
-1. Shoot frame by frame, drive the browser by virtual time: advanced a frame — took a frame. A real-time screen recording tears frames. [Video] [3D]
+1. Shoot frame by frame, drive the browser by virtual time: advanced a frame — took a frame. A real-time screen recording tears frames. [Video] [3D] OBS only for what cannot be driven by virtual time — see `recording.md`. [Toolkit]
 2. Shoot only a demo stand with invented data; before recording, page through every screen with your eyes. [Video] [3D]
 3. The stand must be consistent with itself: two screens that read one fact say the same thing. [Video]
 4. The cursor goes to the target, not past it; draw it on the page from the same events that go into the application. [Video] [3D]

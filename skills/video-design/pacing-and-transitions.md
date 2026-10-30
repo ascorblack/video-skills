@@ -25,6 +25,11 @@
 
 The duration of the dissolve differs between sources: half a second [Video], 0.5–0.8 s [Visual], 0.5–1 s between chapters [Popsci].
 
+### Where the sources disagree: shader transitions
+
+- [Video] [Visual] [Popsci]: one transition for the whole video, a dissolve by default, no scaling at the joins.
+- [Toolkit]: GPU shader transitions (GL Transitions, `@hyperframes/shader-transitions`, `@remotion/transitions`) — wipes, warps, glitches. They belong to a video whose whole style is built on them (a social short, a trailer), and then it is one shader for every join, without zoom; in promos and explainers keep the dissolve. Either way the next shot starts from the final state of the previous one, and both scenes keep moving through the transition. Wiring — the `video-toolkit` skill, `seekable-libraries.md`.
+
 ## A transition without jerking [Visual]
 
 The viewer sees a jump when something that should have stayed in place changes between neighboring frames. Frequent causes:

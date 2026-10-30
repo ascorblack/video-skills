@@ -9,6 +9,8 @@
 
 ## Checking before delivery [Video]
 
+[Toolkit] `video-toolkit/scripts/qa.sh <video>` runs the measurable part in one pass — ffprobe, black and frozen segments, loudness and true peak of the encoded file, a contact sheet, the first and last frame (`video-toolkit`, `qa.md`). The eye checks below still apply.
+
 - ffprobe: resolution, fps, duration, presence and length of the sound track.
 - A snapshot of each slide at 70 % of its length, a sheet of frames by eye. Then an independent check by another model on the same frames: line breaks, cropping, overlaps, small text.
 - Check that the page on which the video lies serves exactly the new file. Open it from the address from which it will be watched.

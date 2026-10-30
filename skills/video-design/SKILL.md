@@ -13,7 +13,7 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 1. In the final state of a frame, a line does not pass through a block, text or another line. [Visual] Connector lines are straight and go around blocks. [Video]
 2. Every term gets an applied example: a scene with a participant, an action and a number. One idea per slide. [Visual]
 3. Count the display time of a slide, do not assign it; do not set the length of the video before the text has been counted. [Visual] The hold norms differ between sources — see `pacing-and-transitions.md`.
-4. One transition for the whole video, a dissolve by default; no scaling at the joins. [Video] [Visual] [Popsci]
+4. One transition for the whole video, a dissolve by default; no scaling at the joins. [Video] [Visual] [Popsci] A shader transition only as the style of the whole video — see `pacing-and-transitions.md`. [Toolkit]
 5. Shared elements of neighboring frames stand at the same coordinates and of the same size; the next shot starts from the final state of the previous one. [Visual]
 6. Captions do not jitter and do not disappear before they have been read. [Video]
 7. Figures in the frame — only those verified by the team, worded as what was actually verified. [Visual]
@@ -29,6 +29,8 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 - `pacing-and-transitions.md` — how long to hold a slide, transitions, causes of jumps at the join, camera.
 - `retro-style.md` — flat picture in the style of popular science and filmstrips, film effects.
 - `process.md` — order of work and checking frames before delivery.
+
+Which library gives which effect (particles, vector paths, 3D, physics, shader transitions) and how to keep it seekable — the `video-toolkit` skill.
 
 ## Sources
 

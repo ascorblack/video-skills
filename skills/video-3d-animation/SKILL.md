@@ -27,7 +27,7 @@ Every rule is taken from the lessons of past videos; the source is in square bra
 - `materials-and-light.md` — glow, shadows, wood, rounding, screens, fonts, spotlight beam.
 - `frame-checks.md` — detectors of intersections and jerks, what they do not see.
 
-Rendering and speeding it up — the `video-render` skill; synchronizing the hands in the scene with an interface recording — the `video-ui-capture` skill.
+Rendering and speeding it up — the `video-render` skill; synchronizing the hands in the scene with an interface recording — the `video-ui-capture` skill. Three.js without the wall clock (`mixer.setTime`, no `Clock`), rigid-body physics with Rapier or Matter.js baked into a per-frame table — the `video-toolkit` skill, `seekable-libraries.md`.
 
 ## Sources
 

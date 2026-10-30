@@ -25,3 +25,8 @@ The render takes a frame by time, and does not play the animation through. There
 - [Popsci] Compute the grain noise from the frame number, not from a random generator: then a repeated render and a render on another machine give the same frame.
 - [Audio] If the generation depends on random numbers, preserve their sequence; after any edits of the generator, check that earlier versions reassemble byte for byte the same.
 - [Video] With frame-by-frame browser capture by virtual time a repeated take matches the previous one frame for frame (the `video-ui-capture` skill).
+
+## Third-party libraries [Toolkit]
+
+- A canvas, particle, physics or shader library is allowed into the render only when its state at an arbitrary frame can be set: seek it, compute it from `t`, or bake it. How for Anime.js, springs, PixiJS, p5.js, Paper.js, tsParticles, Three.js, GL Transitions, Matter.js and Rapier — the `video-toolkit` skill, `seekable-libraries.md`.
+- Check it rather than trust it: two renders from clean processes, compared frame by frame (`video-toolkit/scripts/compare-renders.sh`).
