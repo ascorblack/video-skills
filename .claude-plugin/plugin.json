@@ -1,5 +1,5 @@
 {
   "name": "video-skills",
-  "version": "0.2.0",
-  "description": "Skills for producing videos, distilled from the lessons of past work: design and visuals, sound and voiceover, 3D animation, interface recording, rendering and optimization — plus a map of the code-driven video stack (Remotion/HyperFrames, motion, 2D/3D, physics, shaders, TTS, captions) with QA scripts."
+  "version": "0.3.0",
+  "description": "Skills for producing videos, distilled from the lessons of past work: design and visuals, sound and voiceover, 3D animation, interface recording, rendering and optimization — plus an optional pre-production mode (brief, references, style frames, beat sheet, test shot) and a map of the code-driven video stack (backbones, motion, hand-drawn looks, particles, shaders, post-processing, 3D, Blender, physics, TTS, beat grids, music videos, character acting) with review and QA scripts."
 }

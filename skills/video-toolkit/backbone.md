@@ -50,6 +50,14 @@ The interactive `npx skills add heygen-com/hyperframes` picker opens with nothin
 
 Do not assume HyperFrames is a Remotion wrapper: it has its own composition format, runtime and CLI. `/remotion-to-hyperframes` exists for a port.
 
+**Your own harness** [Practice] — one HTML page that exposes `window.renderAt(t)`, a Puppeteer/Playwright loop that calls it for every frame, and FFmpeg. Left without instructions, an agent tends to build exactly this and to ignore an installed Remotion or HyperFrames, so name the backbone in the brief. The own harness is the right choice when the whole film is one canvas (a p5.js/p5.brush cartoon, a single Three.js scene, a generative piece) and a framework would only add layers. Then it must give what a framework gives:
+
+- `renderAt(t)` is a pure function of `t`, returns only when the frame is drawn (await async draws), and the page reports ready only after fonts and assets have loaded;
+- page console errors and `pageerror` are forwarded to the render log; ms per frame is printed;
+- frames are written to a temporary name and renamed, so an interrupted render resumes; encoding refuses a missing frame;
+- the review modes of `music-video.md` (sheet, strip, clip with audio, loop) exist from the first day;
+- the Chrome GPU flags and the WebGL renderer string are printed at start: a silent fall back to software rendering (SwiftShader) is many times slower (a heavy p5.brush frame took 14–16 s on SwiftShader) and not bit-identical to the GPU.
+
 **OBS Studio** is not a backbone but a recorder. Its footage enters the backbone as a video file. When to use it and how — in `effects-map.md` and the `video-ui-capture` skill.
 
 ## Project layout
@@ -78,7 +86,7 @@ video-project/
 
 ## Order of work
 
-1. **Plan.** Message, audience, length, platform, aspect ratio, fps, language, brand, available assets. Missing parameters — choose sensible defaults and state them. A shot table: `start`, `end`, picture, transition, narration, sound, library, assets. Frames are `round(seconds × fps)`. Mark what is real footage and what is generated. The length is not set before the text is counted [Visual].
+1. **Plan.** At the start of a new video offer the pre-production mode once (`video-preproduction` skill); whether it is taken or declined, the plan below ends up in files. Message, audience, length, platform, aspect ratio, fps, language, brand, available assets. Missing parameters — choose sensible defaults and state them. A shot table: `start`, `end`, picture, transition, narration, sound, library, assets. Frames are `round(seconds × fps)`. Mark what is real footage and what is generated. The length is not set before the text is counted [Visual].
 2. **One representative shot.** 3–8 seconds at production resolution and fps, with the most demanding library of the video in it. Check typography, motion, the join, and that the library survives seeking (render twice, compare) before building the rest.
 3. **All scenes.** The narration track first if the video is voice-led: its timings set the picture [Video]. Libraries only where they visibly beat the backbone.
 4. **Render and inspect.** `scripts/qa.sh`, frames around every join and at every action at full size [Visual] [3D], then the whole video played through.

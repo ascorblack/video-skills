@@ -30,7 +30,7 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 - `archive-voice.md` — the "archive" voice and the layer of ether interference for stylization in the manner of popular science.
 - `delivery.md` — how to deliver the sound, keys and spending.
 
-Local synthesis (Chatterbox), procedural sound rendered offline (Tone.js) and word timestamps for captions and checks (faster-whisper) — the `video-toolkit` skill, `speech-and-sound.md`.
+Measuring a music track before animating to it (beat grid, downbeats, per-frame features for audio-reactive visuals) — `video-toolkit/scripts/beats.py`, `music-video.md`. Local synthesis (Chatterbox), procedural sound rendered offline (Tone.js) and word timestamps for captions and checks (faster-whisper) — the `video-toolkit` skill, `speech-and-sound.md`.
 
 ## Sources
 

@@ -2,7 +2,7 @@
 
 A set of Claude Code skills for producing videos: promos and presentations about programs, videos built from schematic frames, three-dimensional videos in the browser, stylizations in the manner of Soviet popular-science film, and videos made entirely with code.
 
-Five of the skills are assembled from lessons recorded in the course of past videos: every piece of advice there traces back to a phrase from one of those lessons. The sixth, `video-toolkit`, is a map of the code-driven video stack (render backbones, motion, 2D, 3D, physics, shaders, TTS, procedural sound, captions), taken from a breakdown of a short video about that stack and checked against the official documentation; its advice is marked [Toolkit] and is not passed off as a lesson. Each piece of advice has its source in square brackets. Where the sources disagree, both pieces of advice are given, with a note on which case each applies to.
+Five of the skills are assembled from lessons recorded in the course of past videos: every piece of advice there traces back to a phrase from one of those lessons. Two more are not lessons and say so: `video-toolkit`, a map of the code-driven video stack (render backbones, motion and kinetic type, vector and hand-drawn looks, particles, shaders and post-processing, fluids, 3D, physics, Blender, TTS, procedural sound, beat grids, captions, music videos, character acting, the critic's review loop) — library facts studied in each library's own source and checked against the official documentation, marked [Toolkit]; and `video-preproduction`, an optional mode in which the agent offers the person to work the video out before production — brief, references and style frames, a beat sheet of states, the sound plan, a test shot — built from the practices of published agent-made videos, marked [Practice]. Each piece of advice has its source in square brackets. Where the sources disagree, both pieces of advice are given, with a note on which case each applies to.
 
 ## Skills
 
@@ -13,9 +13,10 @@ Five of the skills are assembled from lessons recorded in the course of past vid
 | `video-3d-animation` | 3D animation | first-person hands and body, contact with objects, pose blending, pushing apart, light and materials, detectors of intersections and jerks |
 | `video-ui-capture` | Interface recording | frame-by-frame browser capture, demo stand, cursor, marks, cropping and push-ins, second language version |
 | `video-render` | Rendering and optimization | pitfalls of frame-by-frame rendering, determinism, NVENC and bitrate, launching a render, muxing in the audio, checking the finished file |
-| `video-toolkit` | Tool stack of a code-driven video | Remotion or HyperFrames, OBS, Anime.js, springs, PixiJS, p5.js, Paper.js, particles, GL Transitions, Three.js, Matter.js and Rapier, Chatterbox, Tone.js, faster-whisper; making a library seekable, baking physics, automatic QA of the finished file |
+| `video-preproduction` | Pre-production mode (optional) | the start of a new video: the agent offers Full / Express / No; brief, references, style bible and style frames, beat sheet of states, sound plan, test shot, production plan, long autonomous runs, parallel workers, retrospective |
+| `video-toolkit` | Tool stack of a code-driven video | Remotion, HyperFrames or an own harness; OBS; GSAP SplitText, springs by object class, flubber, Rough.js, PixiJS, p5.js/p5.brush, tsParticles; shaders, LYGIA, post-processing, ASCII, Hydra, WebGL fluid; Three.js explainer techniques, Matter.js and Rapier, Blender, Theatre.js; Chatterbox, Tone.js, faster-whisper; beat grids, music videos, character acting; the critic's frame sheets and automatic QA |
 
-Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the skill triggers, and short rules — and next to it files with details, which `SKILL.md` refers to. `video-toolkit` also has `scripts/`: a QA pass over a finished file (`qa.sh`), a frame-by-frame comparison of two renders (`compare-renders.sh`), word timestamps and captions with faster-whisper (`words.py`) and an example of baking Matter.js physics (`bake-matter.mjs`).
+Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the skill triggers, and short rules — and next to it files with details, which `SKILL.md` refers to. `video-toolkit` also has `scripts/`: labelled frame sheets and strips for the critic (`sheet.sh`), a QA pass over a finished file (`qa.sh`), a frame-by-frame comparison of two renders (`compare-renders.sh`), a beat grid and per-frame audio features (`beats.py`), word timestamps and captions with faster-whisper (`words.py`) and an example of baking Matter.js physics (`bake-matter.mjs`).
 
 ## Sources
 
@@ -26,7 +27,8 @@ Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the
 | [Visual] | archive lessons on the visuals of promo videos made of schematic frames (HTML frames → frame-by-frame render) |
 | [3D] | lessons of a three-dimensional first-person video in the browser (three.js → frame-by-frame render) |
 | [Popsci] | lessons of a video in the style of Soviet popular-science film and early-70s filmstrips |
-| [Toolkit] | a breakdown of a 62-second short about a programmable video stack (watermark `@mmmorozov`), checked against the official documentation and npm/PyPI in October 2026; a map of possibilities, not lessons of a past video |
+| [Toolkit] | library facts: a breakdown of a 62-second short about a programmable video stack (watermark `@mmmorozov`) and a list of libraries for video looks, each studied in its own source and checked against the official documentation and npm/PyPI in October 2026; a map of possibilities, not lessons of a past video |
+| [Practice] | working practices of published agent-made videos: a breakdown of a week of viral Opus 5.5 clips (post by @seeconvm, October 2026) and the repositories PDoomVideo, ClaudeAnimationBase, paint-mv-skills and teardown |
 
 ## Where the sources disagree
 
@@ -36,6 +38,7 @@ Each `skills/<name>/` folder holds a `SKILL.md` — the description by which the
 - Interface in the frame: only a real recording [Video] versus an interface redrawn in every frame of a stylized video [Popsci]; cursor from the recording's events [3D] versus cursor from key points [Popsci] — `video-ui-capture/framing.md`.
 - Transitions: one dissolve for the whole video [Video] [Visual] [Popsci] versus GPU shader transitions [Toolkit] — `video-design/pacing-and-transitions.md`, `video-toolkit/SKILL.md`.
 - Screen recording: frame by frame in virtual time [Video] [3D] versus OBS [Toolkit] — `video-ui-capture/recording.md`.
+- Pre-production: "do not repeatedly ask unnecessary questions" [Toolkit] versus a full brief, references and gates before production [Practice] — resolved by offering the mode once and letting the person choose its depth — `video-preproduction/SKILL.md`.
 - Springs: React Spring [Toolkit] does not survive seeking [Visual] — use the backbone's spring or a closed-form one — `video-toolkit/seekable-libraries.md`.
 
 ## How to install
@@ -76,7 +79,11 @@ skills/
                        materials-and-light.md, frame-checks.md
   video-ui-capture/    SKILL.md, recording.md, framing.md, languages-and-sync.md
   video-render/        SKILL.md, seek-render.md, performance.md, mux-and-delivery.md
+  video-preproduction/ SKILL.md, brief.md, style-and-references.md, story-and-beats.md,
+                       production-plan.md
   video-toolkit/       SKILL.md, backbone.md, effects-map.md, seekable-libraries.md,
+                       gpu-effects.md, blender.md, music-video.md, characters.md,
                        speech-and-sound.md, qa.md,
-                       scripts/ qa.sh, compare-renders.sh, words.py, bake-matter.mjs
+                       scripts/ sheet.sh, qa.sh, compare-renders.sh, beats.py, words.py,
+                                bake-matter.mjs
 ```

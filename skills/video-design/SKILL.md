@@ -30,6 +30,8 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 - `retro-style.md` — flat picture in the style of popular science and filmstrips, film effects.
 - `process.md` — order of work and checking frames before delivery.
 
+At the start of a new video, offer the pre-production mode (brief, references, style frames, beat sheet) — the `video-preproduction` skill; the person may decline it.
+
 Which library gives which effect (particles, vector paths, 3D, physics, shader transitions) and how to keep it seekable — the `video-toolkit` skill.
 
 ## Sources

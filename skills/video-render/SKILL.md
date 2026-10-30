@@ -27,7 +27,7 @@ Where the sources disagree, both pieces of advice are given, with a note on whic
 - `performance.md` — where the time goes, encoding, workers, launching the render.
 - `mux-and-delivery.md` — muxing in the sound, checking the finished file, versions.
 
-Making third-party libraries seekable, baking simulations and the automatic QA scripts (`qa.sh`, `compare-renders.sh`) — the `video-toolkit` skill.
+Making third-party libraries seekable, baking simulations, the critic's labelled frame sheets and the automatic QA scripts (`sheet.sh`, `qa.sh`, `compare-renders.sh`) — the `video-toolkit` skill.
 
 ## Sources
 
